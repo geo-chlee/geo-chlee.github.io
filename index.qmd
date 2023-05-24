@@ -1,0 +1,49 @@
+---
+title: "Changho"
+---
+
+This is a Changho's website.
+
+About me:
+
+-   Geographical Information Scientist
+-   Ph. D. Student at the University of Texas at Dallas
+-   Research Interests:
+    -   Spatial statistics
+    -   Spatial optimization
+    -   Deep learning
+
+\<Location : The University of Texas at Dallas\>
+
+```{r}
+library(tidyverse)
+library(sf)
+library(ggspatial)
+library(rnaturalearth)
+library(tidygeocoder)
+library(maps)
+
+world_map_data <- ne_countries(scale = "medium", returnclass = "sf")
+state_map_data <- map('state', fill = TRUE, plot = FALSE) %>% st_as_sf()
+
+portlist = c("the University of Texas at Dallas")
+port_data = tibble(location = portlist)
+
+port_data %>% 
+  mutate(lat = NA
+         ,long = NA
+         ) ->
+  port_data
+
+for(i in 1:nrow(port_data)){
+  coordinates = geo_osm(port_data$location[i])
+  port_data$long[i] = coordinates$long
+  port_data$lat[i] = coordinates$lat
+}
+
+ggplot() +
+  geom_sf(data = world_map_data) +
+  geom_sf(data = state_map_data) +
+  geom_point(data = port_data, aes(x = long, y = lat), color = 'red') +
+  coord_sf(xlim = c(-110, -92), ylim = c(25,40))
+```
