@@ -2,14 +2,49 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Changho",
+    "title": "Changho Lee",
     "section": "",
-    "text": "This is a Changho’s website.\nAbout me:\n\nGeographical Information Scientist\nPh. D. Student at the University of Texas at Dallas\nResearch Interests:\n\nSpatial statistics\nSpatial optimization\nMachine & Deep Learning\n\n\n&lt;Location : The University of Texas at Dallas&gt;\n\nlibrary(tidyverse)\n\n── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──\n\n\n✔ ggplot2 3.3.6     ✔ purrr   0.3.4\n✔ tibble  3.1.7     ✔ dplyr   1.0.9\n✔ tidyr   1.2.0     ✔ stringr 1.4.0\n✔ readr   2.1.2     ✔ forcats 0.5.1\n\n\n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\n\nlibrary(sf)\n\nLinking to GEOS 3.9.1, GDAL 3.3.2, PROJ 7.2.1; sf_use_s2() is TRUE\n\nlibrary(ggspatial)\n\nWarning: package 'ggspatial' was built under R version 4.2.3\n\nlibrary(rnaturalearth)\nlibrary(tidygeocoder)\n\nWarning: package 'tidygeocoder' was built under R version 4.2.3\n\nlibrary(maps)\n\n\nAttaching package: 'maps'\n\n\nThe following object is masked from 'package:purrr':\n\n    map\n\n\n\nworld_map_data &lt;- ne_countries(scale = \"medium\", returnclass = \"sf\")\nstate_map_data &lt;- map('state', fill = TRUE, plot = FALSE) %&gt;% st_as_sf()\n\nportlist = c(\"the University of Texas at Dallas\")\nport_data = tibble(location = portlist)\n\nport_data %&gt;% \n  mutate(lat = NA\n         ,long = NA\n         ) -&gt;\n  port_data\n\nfor(i in 1:nrow(port_data)){\n  coordinates = geo_osm(port_data$location[i])\n  port_data$long[i] = coordinates$long\n  port_data$lat[i] = coordinates$lat\n}\n\nWarning: `geo_osm()` was deprecated in tidygeocoder 1.0.3.\nPlease use `geo()` instead.\nThis warning is displayed once every 8 hours.\nCall `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.\n\n\nPassing 1 address to the Nominatim single address geocoder\n\n\nQuery completed in: 1 seconds\n\n\n\nggplot() +\n  geom_sf(data = world_map_data) +\n  geom_sf(data = state_map_data) +\n  geom_point(data = port_data, aes(x = long, y = lat), color = 'red') +\n  coord_sf(xlim = c(-110, -92), ylim = c(25,40))"
+    "text": "I am a doctoral student studying Geospatial Information Sciences.\nResearch Interest\n\nSpatial Statistics\nSpatial Optimization\nMachine and Deep Learning\n\nContacts: changho.lee@utdallas.edu / Website"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About",
+    "title": "CV",
+    "section": "",
+    "text": "Changho’s CV"
+  },
+  {
+    "objectID": "assignment1.html",
+    "href": "assignment1.html",
+    "title": "Assignment1",
+    "section": "",
+    "text": "Co-work: Sunmin Hong\n1. Start drafting a research project framework:\na. Identify a topic of interest\nOur topic is identifying the characteristics of criminals who engage in phishing crimes in South Korea. Specifically, they will be divided into several groups based on their sociodemographic characteristics and crime participation path as variables. After that, a risk group with the highest distribution of all variables will be selected, and crime risk factors based on their characteristics will be displayed.\nb. Write up the research question\n\nUnsupervised Learning 1: What socio-economic variable are classified based on the characteristics of fishing criminals?\nUnsupervised learning 2: What is the distribution of the difference in the influence of variables that contribute to dividing the characteristics of criminals?\nSupervised Learning 1: What is the statistical relationship of the most influential. variable with other variables? (regression)\nSupervised Learning 2: How to create a model for predicting variables with great influence?\n\nc. Do you have a dependent variable?\nWe will find the most influential variable through unsupervised learning and use that. variable as a dependent variable to find the most suitable model through supervised. learning.\nd. What is the hypothes is?\nAfter analyzing existing studies on criminals who engage in cybercrime, especially. phishing, we will create hypotheses related to the characteristics of criminals who engage in phishing.\n2. Six steps in research:\na. Topic identification/Motivation\nAs a result of collecting data on demographic characteristics and crime participation. paths of criminals who participated in phishing crimes in South Korea, the information to be set as variables could be classified into their participation path, gender, age, criminal record, occupation, and education. After creating several groups that engage in phishing crimes based on this information, we will reveal what characteristics the most dangerous groups have.\nb. Systematic Literature Review/Meta Analysis\nIn progress\nc. Model of Interest: Data-based, Algorithm-based or Hybrid\nWe will use a data-driven model using information about the characteristics of criminals involved in phishing crimes.\nd. Data Collection and Management\nWe have already obtained data containing information about the characteristics of criminals involved in phishing crimes, and after processing the missing data, we will proceed with the aforementioned procedure.\ne. Writing tool (e.g. LaTeX, Markdown/quarto, overleaf, MathJax)\nWe will use programs such as LaTex or Overleaf that show publication-level quality to reveal the characteristics of the phishing offender.\nf. Findings interpreted (e.g. models, data visualization)\nWe will use the visualization method that best represents the results for different groups , including the most risky group mentioned above."
+  },
+  {
+    "objectID": "assignment2.html",
+    "href": "assignment2.html",
+    "title": "Assignment2",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "assignment3.html",
+    "href": "assignment3.html",
+    "title": "Assignment3",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "assignment4.html",
+    "href": "assignment4.html",
+    "title": "Assignment4",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "assignment5.html",
+    "href": "assignment5.html",
+    "title": "Assignment5",
     "section": "",
     "text": "About this site\n\n1 + 1\n\n[1] 2"
   }
