@@ -1,0 +1,55 @@
+---
+title: "Assignment1"
+---
+
+Co-work: Sunmin Hong
+
+**1. Start drafting a research project framework:**
+
+**a. Identify a topic of interest**
+
+Our topic is identifying the characteristics of criminals who engage in phishing crimes in South Korea. Specifically, they will be divided into several groups based on their sociodemographic characteristics and crime participation path as variables. After that, a risk group with the highest distribution of all variables will be selected, and crime risk factors based on their characteristics will be displayed.
+
+**b. Write up the research question**
+
+(1) Unsupervised Learning 1: What socio-economic variable are classified based on the characteristics of fishing criminals?
+
+(2) Unsupervised learning 2: What is the distribution of the difference in the influence of variables that contribute to dividing the characteristics of criminals?
+
+(3) Supervised Learning 1: What is the statistical relationship of the most influential. variable with other variables? (regression)
+
+(4) Supervised Learning 2: How to create a model for predicting variables with great influence?
+
+**c. Do you have a dependent variable?**
+
+We will find the most influential variable through unsupervised learning and use that. variable as a dependent variable to find the most suitable model through supervised. learning.
+
+**d. What is the hypothes is?**
+
+After analyzing existing studies on criminals who engage in cybercrime, especially. phishing, we will create hypotheses related to the characteristics of criminals who engage in phishing.
+
+**2. Six steps in research:**
+
+**a. Topic identification/Motivation**
+
+As a result of collecting data on demographic characteristics and crime participation. paths of criminals who participated in phishing crimes in South Korea, the information to be set as variables could be classified into their participation path, gender, age, criminal record, occupation, and education. After creating several groups that engage in phishing crimes based on this information, we will reveal what characteristics the most dangerous groups have.
+
+**b. Systematic Literature Review/Meta Analysis**
+
+In progress
+
+**c. Model of Interest: Data-based, Algorithm-based or Hybrid**
+
+We will use a data-driven model using information about the characteristics of criminals involved in phishing crimes.
+
+**d. Data Collection and Management**
+
+We have already obtained data containing information about the characteristics of criminals involved in phishing crimes, and after processing the missing data, we will proceed with the aforementioned procedure.
+
+**e. Writing tool (e.g. LaTeX, Markdown/quarto, overleaf, MathJax)**
+
+We will use programs such as LaTex or Overleaf that show publication-level quality to reveal the characteristics of the phishing offender.
+
+**f. Findings interpreted (e.g. models, data visualization)**
+
+We will use the visualization method that best represents the results for different groups , including the most risky group mentioned above.

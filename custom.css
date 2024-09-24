@@ -1,0 +1,24 @@
+.navbar .navbar-nav > li {
+  display: inline-block;
+  float: none;
+}
+
+.navbar .navbar-nav {
+  float: none;
+  margin: 0 auto;
+  display: table;
+  table-layout: fixed;
+  width: auto;
+}
+
+.navbar .navbar-nav > li > .dropdown-menu {
+  display: none;
+}
+
+.navbar .navbar-nav > li:hover > .dropdown-menu {
+  display: block;
+  position: absolute;
+  min-width: 100%;
+  left: 0;
+  text-align: left;
+}

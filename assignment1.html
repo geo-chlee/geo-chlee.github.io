@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -96,23 +130,23 @@ ul.task-list li input[type="checkbox"] {
     <ul class="dropdown-menu" aria-labelledby="nav-menu-assignment">    
         <li>
     <a class="dropdown-item" href="./assignment1.html" rel="" target="">
- <span class="dropdown-text">Previous Work</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./assignment2.html" rel="" target="">
  <span class="dropdown-text">Assignment 1</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./assignment3.html" rel="" target="">
+    <a class="dropdown-item" href="./assignment2.html" rel="" target="">
  <span class="dropdown-text">Assignment 2</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./assignment4.html" rel="" target="">
+    <a class="dropdown-item" href="./assignment3.html" rel="" target="">
  <span class="dropdown-text">Assignment 3</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./assignment5.html" rel="" target="">
+    <a class="dropdown-item" href="./assignment4.html" rel="" target="">
  <span class="dropdown-text">Assignment 4</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./prev_assignment1.html" rel="" target="">
+ <span class="dropdown-text">Previous Work</span></a>
   </li>  
     </ul>
   </li>
@@ -150,34 +184,360 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Co-work: Sunmin Hong</p>
-<p><strong>1. Start drafting a research project framework:</strong></p>
-<p><strong>a. Identify a topic of interest</strong></p>
-<p>Our topic is identifying the characteristics of criminals who engage in phishing crimes in South Korea. Specifically, they will be divided into several groups based on their sociodemographic characteristics and crime participation path as variables. After that, a risk group with the highest distribution of all variables will be selected, and crime risk factors based on their characteristics will be displayed.</p>
-<p><strong>b. Write up the research question</strong></p>
 <ol type="1">
-<li><p>Unsupervised Learning 1: What socio-economic variable are classified based on the characteristics of fishing criminals?</p></li>
-<li><p>Unsupervised learning 2: What is the distribution of the difference in the influence of variables that contribute to dividing the characteristics of criminals?</p></li>
-<li><p>Supervised Learning 1: What is the statistical relationship of the most influential. variable with other variables? (regression)</p></li>
-<li><p>Supervised Learning 2: How to create a model for predicting variables with great influence?</p></li>
+<li><strong>Try Anscombe’s example</strong></li>
 </ol>
-<p><strong>c.&nbsp;Do you have a dependent variable?</strong></p>
-<p>We will find the most influential variable through unsupervised learning and use that. variable as a dependent variable to find the most suitable model through supervised. learning.</p>
-<p><strong>d.&nbsp;What is the hypothes is?</strong></p>
-<p>After analyzing existing studies on criminals who engage in cybercrime, especially. phishing, we will create hypotheses related to the characteristics of criminals who engage in phishing.</p>
-<p><strong>2. Six steps in research:</strong></p>
-<p><strong>a. Topic identification/Motivation</strong></p>
-<p>As a result of collecting data on demographic characteristics and crime participation. paths of criminals who participated in phishing crimes in South Korea, the information to be set as variables could be classified into their participation path, gender, age, criminal record, occupation, and education. After creating several groups that engage in phishing crimes based on this information, we will reveal what characteristics the most dangerous groups have.</p>
-<p><strong>b. Systematic Literature Review/Meta Analysis</strong></p>
-<p>In progress</p>
-<p><strong>c.&nbsp;Model of Interest: Data-based, Algorithm-based or Hybrid</strong></p>
-<p>We will use a data-driven model using information about the characteristics of criminals involved in phishing crimes.</p>
-<p><strong>d.&nbsp;Data Collection and Management</strong></p>
-<p>We have already obtained data containing information about the characteristics of criminals involved in phishing crimes, and after processing the missing data, we will proceed with the aforementioned procedure.</p>
-<p><strong>e. Writing tool (e.g.&nbsp;LaTeX, Markdown/quarto, overleaf, MathJax)</strong></p>
-<p>We will use programs such as LaTex or Overleaf that show publication-level quality to reveal the characteristics of the phishing offender.</p>
-<p><strong>f.&nbsp;Findings interpreted (e.g.&nbsp;models, data visualization)</strong></p>
-<p>We will use the visualization method that best represents the results for different groups , including the most risky group mentioned above.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(anscombe)  <span class="co"># Load Anscombe's data</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(anscombe) <span class="co"># View the data</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(anscombe)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       x1             x2             x3             x4           y1        
+ Min.   : 4.0   Min.   : 4.0   Min.   : 4.0   Min.   : 8   Min.   : 4.260  
+ 1st Qu.: 6.5   1st Qu.: 6.5   1st Qu.: 6.5   1st Qu.: 8   1st Qu.: 6.315  
+ Median : 9.0   Median : 9.0   Median : 9.0   Median : 8   Median : 7.580  
+ Mean   : 9.0   Mean   : 9.0   Mean   : 9.0   Mean   : 9   Mean   : 7.501  
+ 3rd Qu.:11.5   3rd Qu.:11.5   3rd Qu.:11.5   3rd Qu.: 8   3rd Qu.: 8.570  
+ Max.   :14.0   Max.   :14.0   Max.   :14.0   Max.   :19   Max.   :10.840  
+       y2              y3              y4        
+ Min.   :3.100   Min.   : 5.39   Min.   : 5.250  
+ 1st Qu.:6.695   1st Qu.: 6.25   1st Qu.: 6.170  
+ Median :8.140   Median : 7.11   Median : 7.040  
+ Mean   :7.501   Mean   : 7.50   Mean   : 7.501  
+ 3rd Qu.:8.950   3rd Qu.: 7.98   3rd Qu.: 8.190  
+ Max.   :9.260   Max.   :12.74   Max.   :12.500  </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Simple version</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(anscombe<span class="sc">$</span>x1,anscombe<span class="sc">$</span>y1)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Create four model objects</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>lm1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(y1 <span class="sc">~</span> x1, <span class="at">data=</span>anscombe)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = y1 ~ x1, data = anscombe)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1.92127 -0.45577 -0.04136  0.70941  1.83882 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)   
+(Intercept)   3.0001     1.1247   2.667  0.02573 * 
+x1            0.5001     0.1179   4.241  0.00217 **
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 1.237 on 9 degrees of freedom
+Multiple R-squared:  0.6665,    Adjusted R-squared:  0.6295 
+F-statistic: 17.99 on 1 and 9 DF,  p-value: 0.00217</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>lm2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(y2 <span class="sc">~</span> x2, <span class="at">data=</span>anscombe)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = y2 ~ x2, data = anscombe)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-1.9009 -0.7609  0.1291  0.9491  1.2691 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)   
+(Intercept)    3.001      1.125   2.667  0.02576 * 
+x2             0.500      0.118   4.239  0.00218 **
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 1.237 on 9 degrees of freedom
+Multiple R-squared:  0.6662,    Adjusted R-squared:  0.6292 
+F-statistic: 17.97 on 1 and 9 DF,  p-value: 0.002179</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>lm3 <span class="ot">&lt;-</span> <span class="fu">lm</span>(y3 <span class="sc">~</span> x3, <span class="at">data=</span>anscombe)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = y3 ~ x3, data = anscombe)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-1.1586 -0.6146 -0.2303  0.1540  3.2411 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)   
+(Intercept)   3.0025     1.1245   2.670  0.02562 * 
+x3            0.4997     0.1179   4.239  0.00218 **
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 1.236 on 9 degrees of freedom
+Multiple R-squared:  0.6663,    Adjusted R-squared:  0.6292 
+F-statistic: 17.97 on 1 and 9 DF,  p-value: 0.002176</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>lm4 <span class="ot">&lt;-</span> <span class="fu">lm</span>(y4 <span class="sc">~</span> x4, <span class="at">data=</span>anscombe)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = y4 ~ x4, data = anscombe)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-1.751 -0.831  0.000  0.809  1.839 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)   
+(Intercept)   3.0017     1.1239   2.671  0.02559 * 
+x4            0.4999     0.1178   4.243  0.00216 **
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 1.236 on 9 degrees of freedom
+Multiple R-squared:  0.6667,    Adjusted R-squared:  0.6297 
+F-statistic:    18 on 1 and 9 DF,  p-value: 0.002165</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(anscombe<span class="sc">$</span>x1,anscombe<span class="sc">$</span>y1)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="fu">coefficients</span>(lm1))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="assignment1_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(anscombe<span class="sc">$</span>x2,anscombe<span class="sc">$</span>y2)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="fu">coefficients</span>(lm2))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="assignment1_files/figure-html/unnamed-chunk-1-2.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(anscombe<span class="sc">$</span>x3,anscombe<span class="sc">$</span>y3)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="fu">coefficients</span>(lm3))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="assignment1_files/figure-html/unnamed-chunk-1-3.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(anscombe<span class="sc">$</span>x4,anscombe<span class="sc">$</span>y4)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="fu">coefficients</span>(lm4))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="assignment1_files/figure-html/unnamed-chunk-1-4.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Fancy version (per help file)</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>ff <span class="ot">&lt;-</span> y <span class="sc">~</span> x</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>mods <span class="ot">&lt;-</span> <span class="fu">setNames</span>(<span class="fu">as.list</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>), <span class="fu">paste0</span>(<span class="st">"lm"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>))</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot using for loop</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>) {</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>  ff[<span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>] <span class="ot">&lt;-</span> <span class="fu">lapply</span>(<span class="fu">paste0</span>(<span class="fu">c</span>(<span class="st">"y"</span>,<span class="st">"x"</span>), i), as.name)</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>  <span class="do">## or   ff[[2]] &lt;- as.name(paste0("y", i))</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>  <span class="do">##      ff[[3]] &lt;- as.name(paste0("x", i))</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>  mods[[i]] <span class="ot">&lt;-</span> lmi <span class="ot">&lt;-</span> <span class="fu">lm</span>(ff, <span class="at">data =</span> anscombe)</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">anova</span>(lmi))</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Analysis of Variance Table
+
+Response: y1
+          Df Sum Sq Mean Sq F value  Pr(&gt;F)   
+x1         1 27.510 27.5100   17.99 0.00217 **
+Residuals  9 13.763  1.5292                   
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+Analysis of Variance Table
+
+Response: y2
+          Df Sum Sq Mean Sq F value   Pr(&gt;F)   
+x2         1 27.500 27.5000  17.966 0.002179 **
+Residuals  9 13.776  1.5307                    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+Analysis of Variance Table
+
+Response: y3
+          Df Sum Sq Mean Sq F value   Pr(&gt;F)   
+x3         1 27.470 27.4700  17.972 0.002176 **
+Residuals  9 13.756  1.5285                    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+Analysis of Variance Table
+
+Response: y4
+          Df Sum Sq Mean Sq F value   Pr(&gt;F)   
+x4         1 27.490 27.4900  18.003 0.002165 **
+Residuals  9 13.742  1.5269                    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(mods, coef)  <span class="co"># Note the use of this function</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                  lm1      lm2       lm3       lm4
+(Intercept) 3.0000909 3.000909 3.0024545 3.0017273
+x1          0.5000909 0.500000 0.4997273 0.4999091</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lapply</span>(mods, <span class="cf">function</span>(fm) <span class="fu">coef</span>(<span class="fu">summary</span>(fm)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$lm1
+             Estimate Std. Error  t value    Pr(&gt;|t|)
+(Intercept) 3.0000909  1.1247468 2.667348 0.025734051
+x1          0.5000909  0.1179055 4.241455 0.002169629
+
+$lm2
+            Estimate Std. Error  t value    Pr(&gt;|t|)
+(Intercept) 3.000909  1.1253024 2.666758 0.025758941
+x2          0.500000  0.1179637 4.238590 0.002178816
+
+$lm3
+             Estimate Std. Error  t value    Pr(&gt;|t|)
+(Intercept) 3.0024545  1.1244812 2.670080 0.025619109
+x3          0.4997273  0.1178777 4.239372 0.002176305
+
+$lm4
+             Estimate Std. Error  t value    Pr(&gt;|t|)
+(Intercept) 3.0017273  1.1239211 2.670763 0.025590425
+x4          0.4999091  0.1178189 4.243028 0.002164602</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Preparing for the plots</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>op <span class="ot">&lt;-</span> <span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>), <span class="at">mar =</span> <span class="fl">0.1</span><span class="sc">+</span><span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">1</span>,<span class="dv">1</span>), <span class="at">oma =</span>  <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">0</span>))</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot charts using for loop</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>) {</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>  ff[<span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>] <span class="ot">&lt;-</span> <span class="fu">lapply</span>(<span class="fu">paste0</span>(<span class="fu">c</span>(<span class="st">"y"</span>,<span class="st">"x"</span>), i), as.name)</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>(ff, <span class="at">data =</span> anscombe, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">pch =</span> <span class="dv">21</span>, <span class="at">bg =</span> <span class="st">"orange"</span>, <span class="at">cex =</span> <span class="fl">1.2</span>,</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">19</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">13</span>))</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">abline</span>(mods[[i]], <span class="at">col =</span> <span class="st">"blue"</span>)</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a><span class="fu">mtext</span>(<span class="st">"Anscombe's 4 Regression data sets"</span>, <span class="at">outer =</span> <span class="cn">TRUE</span>, <span class="at">cex =</span> <span class="fl">1.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="assignment1_files/figure-html/unnamed-chunk-1-5.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(op)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="2" type="1">
+<li>Google “Generative art”</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://images.squarespace-cdn.com/content/v1/59413d96e6f2e1c6837c7ecd/1534210807777-2OCYP6ACY6YE4LHCJHEB/VVRRR%C2%A0-+Manolo+April%2C+2018?format=2500w.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">VVRRR - Manolo April, 2018</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://sothebys-com.brightspotcdn.com/dims4/default/7e2ad30/2147483647/strip/true/crop/2400x2400+0+0/resize/684x684!/format/webp/quality/90/?url=http%3A%2F%2Fsothebys-brightspot.s3.amazonaws.com%2Fdotcom%2F94%2F15%2F878f0cca461497f74505b68f1d27%2Fringer879.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Dmitri Cherniak, Ringers #879 (Estimate: $2???3 million)</figcaption>
+</figure>
+</div>
+<ol start="3" type="1">
+<li><strong>Export the results after running Fall.R</strong></li>
+</ol>
+<p>1) Generate data to visualize</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gsubfn)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: proto</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+✔ purrr     1.0.2     </code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define elements in plant art</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Each image corresponds to a different axiom, rules, angle and depth</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Leaf of Fall</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>axiom<span class="ot">=</span><span class="st">"X"</span></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>rules<span class="ot">=</span><span class="fu">list</span>(<span class="st">"X"</span><span class="ot">=</span><span class="st">"F-[[X]+X]+F[+FX]-X"</span>, <span class="st">"F"</span><span class="ot">=</span><span class="st">"FF"</span>)</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>angle<span class="ot">=</span><span class="fl">22.5</span></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>depth<span class="ot">=</span><span class="dv">6</span></span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>depth) axiom<span class="ot">=</span><span class="fu">gsubfn</span>(<span class="st">"."</span>, rules, axiom)</span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a>actions<span class="ot">=</span><span class="fu">str_extract_all</span>(axiom, <span class="st">"</span><span class="sc">\\</span><span class="st">d*</span><span class="sc">\\</span><span class="st">+|</span><span class="sc">\\</span><span class="st">d*</span><span class="sc">\\</span><span class="st">-|F|L|R|</span><span class="sc">\\</span><span class="st">[|</span><span class="sc">\\</span><span class="st">]|</span><span class="sc">\\</span><span class="st">|"</span>) <span class="sc">%&gt;%</span> unlist</span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a>status<span class="ot">=</span><span class="fu">data.frame</span>(<span class="at">x=</span><span class="fu">numeric</span>(<span class="dv">0</span>), <span class="at">y=</span><span class="fu">numeric</span>(<span class="dv">0</span>), <span class="at">alfa=</span><span class="fu">numeric</span>(<span class="dv">0</span>))</span>
+<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a>points<span class="ot">=</span><span class="fu">data.frame</span>(<span class="at">x1 =</span> <span class="dv">0</span>, <span class="at">y1 =</span> <span class="dv">0</span>, <span class="at">x2 =</span> <span class="cn">NA</span>, <span class="at">y2 =</span> <span class="cn">NA</span>, <span class="at">alfa=</span><span class="dv">90</span>, <span class="at">depth=</span><span class="dv">1</span>)</span>
+<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Generating data</span></span>
+<span id="cb28-21"><a href="#cb28-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Note: may take a minute or two</span></span>
+<span id="cb28-22"><a href="#cb28-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-23"><a href="#cb28-23" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (action <span class="cf">in</span> actions)</span>
+<span id="cb28-24"><a href="#cb28-24" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb28-25"><a href="#cb28-25" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (action<span class="sc">==</span><span class="st">"F"</span>)</span>
+<span id="cb28-26"><a href="#cb28-26" aria-hidden="true" tabindex="-1"></a>  {</span>
+<span id="cb28-27"><a href="#cb28-27" aria-hidden="true" tabindex="-1"></a>    x<span class="ot">=</span>points[<span class="dv">1</span>, <span class="st">"x1"</span>]<span class="sc">+</span><span class="fu">cos</span>(points[<span class="dv">1</span>, <span class="st">"alfa"</span>]<span class="sc">*</span>(pi<span class="sc">/</span><span class="dv">180</span>))</span>
+<span id="cb28-28"><a href="#cb28-28" aria-hidden="true" tabindex="-1"></a>    y<span class="ot">=</span>points[<span class="dv">1</span>, <span class="st">"y1"</span>]<span class="sc">+</span><span class="fu">sin</span>(points[<span class="dv">1</span>, <span class="st">"alfa"</span>]<span class="sc">*</span>(pi<span class="sc">/</span><span class="dv">180</span>))</span>
+<span id="cb28-29"><a href="#cb28-29" aria-hidden="true" tabindex="-1"></a>    points[<span class="dv">1</span>,<span class="st">"x2"</span>]<span class="ot">=</span>x</span>
+<span id="cb28-30"><a href="#cb28-30" aria-hidden="true" tabindex="-1"></a>    points[<span class="dv">1</span>,<span class="st">"y2"</span>]<span class="ot">=</span>y</span>
+<span id="cb28-31"><a href="#cb28-31" aria-hidden="true" tabindex="-1"></a>    <span class="fu">data.frame</span>(<span class="at">x1 =</span> x, <span class="at">y1 =</span> y, <span class="at">x2 =</span> <span class="cn">NA</span>, <span class="at">y2 =</span> <span class="cn">NA</span>,</span>
+<span id="cb28-32"><a href="#cb28-32" aria-hidden="true" tabindex="-1"></a>               <span class="at">alfa=</span>points[<span class="dv">1</span>, <span class="st">"alfa"</span>],</span>
+<span id="cb28-33"><a href="#cb28-33" aria-hidden="true" tabindex="-1"></a>               <span class="at">depth=</span>points[<span class="dv">1</span>,<span class="st">"depth"</span>]) <span class="sc">%&gt;%</span> <span class="fu">rbind</span>(points)<span class="ot">-&gt;</span>points</span>
+<span id="cb28-34"><a href="#cb28-34" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb28-35"><a href="#cb28-35" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (action <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"+"</span>, <span class="st">"-"</span>)){</span>
+<span id="cb28-36"><a href="#cb28-36" aria-hidden="true" tabindex="-1"></a>    alfa<span class="ot">=</span>points[<span class="dv">1</span>, <span class="st">"alfa"</span>]</span>
+<span id="cb28-37"><a href="#cb28-37" aria-hidden="true" tabindex="-1"></a>    points[<span class="dv">1</span>, <span class="st">"alfa"</span>]<span class="ot">=</span><span class="fu">eval</span>(<span class="fu">parse</span>(<span class="at">text=</span><span class="fu">paste0</span>(<span class="st">"alfa"</span>,action, angle)))</span>
+<span id="cb28-38"><a href="#cb28-38" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb28-39"><a href="#cb28-39" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(action<span class="sc">==</span><span class="st">"["</span>){</span>
+<span id="cb28-40"><a href="#cb28-40" aria-hidden="true" tabindex="-1"></a>    <span class="fu">data.frame</span>(<span class="at">x=</span>points[<span class="dv">1</span>, <span class="st">"x1"</span>], <span class="at">y=</span>points[<span class="dv">1</span>, <span class="st">"y1"</span>], <span class="at">alfa=</span>points[<span class="dv">1</span>, <span class="st">"alfa"</span>]) <span class="sc">%&gt;%</span></span>
+<span id="cb28-41"><a href="#cb28-41" aria-hidden="true" tabindex="-1"></a>      <span class="fu">rbind</span>(status) <span class="ot">-&gt;</span> status</span>
+<span id="cb28-42"><a href="#cb28-42" aria-hidden="true" tabindex="-1"></a>    points[<span class="dv">1</span>, <span class="st">"depth"</span>]<span class="ot">=</span>points[<span class="dv">1</span>, <span class="st">"depth"</span>]<span class="sc">+</span><span class="dv">1</span></span>
+<span id="cb28-43"><a href="#cb28-43" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb28-44"><a href="#cb28-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-45"><a href="#cb28-45" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(action<span class="sc">==</span><span class="st">"]"</span>){</span>
+<span id="cb28-46"><a href="#cb28-46" aria-hidden="true" tabindex="-1"></a>    depth<span class="ot">=</span>points[<span class="dv">1</span>, <span class="st">"depth"</span>]</span>
+<span id="cb28-47"><a href="#cb28-47" aria-hidden="true" tabindex="-1"></a>    points[<span class="sc">-</span><span class="dv">1</span>,]<span class="ot">-&gt;</span>points</span>
+<span id="cb28-48"><a href="#cb28-48" aria-hidden="true" tabindex="-1"></a>    <span class="fu">data.frame</span>(<span class="at">x1=</span>status[<span class="dv">1</span>, <span class="st">"x"</span>], <span class="at">y1=</span>status[<span class="dv">1</span>, <span class="st">"y"</span>], <span class="at">x2=</span><span class="cn">NA</span>, <span class="at">y2=</span><span class="cn">NA</span>,</span>
+<span id="cb28-49"><a href="#cb28-49" aria-hidden="true" tabindex="-1"></a>               <span class="at">alfa=</span>status[<span class="dv">1</span>, <span class="st">"alfa"</span>],</span>
+<span id="cb28-50"><a href="#cb28-50" aria-hidden="true" tabindex="-1"></a>               <span class="at">depth=</span>depth<span class="dv">-1</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb28-51"><a href="#cb28-51" aria-hidden="true" tabindex="-1"></a>      <span class="fu">rbind</span>(points) <span class="ot">-&gt;</span> points</span>
+<span id="cb28-52"><a href="#cb28-52" aria-hidden="true" tabindex="-1"></a>    status[<span class="sc">-</span><span class="dv">1</span>,]<span class="ot">-&gt;</span>status</span>
+<span id="cb28-53"><a href="#cb28-53" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb28-54"><a href="#cb28-54" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>2) Plot the data generated in the previous block</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> x1, <span class="at">y =</span> y1, <span class="at">xend =</span> x2, <span class="at">yend =</span> y2),</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">lineend =</span> <span class="st">"round"</span>,</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">color=</span><span class="st">"grey80"</span>, <span class="co"># Set your own Fall color?</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">data=</span><span class="fu">na.omit</span>(points)) <span class="sc">+</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>(<span class="at">ratio =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>() <span class="co"># No grid nor axes</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="assignment1_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<ol start="2" type="1">
+<li><strong>Write a critique on a chart in published work</strong></li>
+</ol>
+<p><img src="images/clipboard-2272133549.png" class="img-fluid"></p>
+<p>(reference: <a href="https://www.msn.com/en-us/news/us/5-1-earthquake-reported-in-west-texas-felt-in-parts-of-dallas-fort-worth-area/ar-AA1qGwI2?ocid=socialshare&amp;pc=W099&amp;cvid=ecaf83be12b7423db24a8cc6e7a04c20&amp;ei=11" class="uri">https://www.msn.com/en-us/news/us/5-1-earthquake-reported-in-west-texas-felt-in-parts-of-dallas-fort-worth-area/ar-AA1qGwI2?ocid=socialshare&amp;pc=W099&amp;cvid=ecaf83be12b7423db24a8cc6e7a04c20&amp;ei=11</a>)</p>
+<p>This NBC Dallas News report covers an earthquake that occurred in Martin County at 7:49 p.m., approximately 21 miles southwest of Ackerly, Texas. The report includes a map to illustrate the geographical impacts of the earthquake using various symbols and colors. However, the map does not effectively convey the information for the following reasons:</p>
+<ol type="1">
+<li><p><strong>Lack of Legend or Descriptive Labels</strong>: There is no legend or description provided to help readers interpret the map. This is particularly problematic for the two blue lines, which are positioned in the inner and outer areas of the map but are not explained. The map leaves viewers unclear about what these lines represent. Although the data itself is reliable (as it comes from the US Geological Survey, which uses seismic sensors and geophysical tools), the chart’s design fails to communicate this data clearly.</p>
+<ul>
+<li><strong>Misleading Representation of Earthquake Effects</strong>: While the chart visually depicts the earthquake’s location and potentially affected areas, the use of concentric circles could mislead viewers. It might suggest that the earthquake’s effects are evenly distributed, which is rarely the case. In reality, earthquake intensity decreases significantly as you move farther from the epicenter. A more accurate visualization would use gradients or nuanced shading to reflect this variation in intensity.</li>
+</ul></li>
+<li><p><strong>Design Flaws in the Map��s Visual Grammar</strong>:</p>
+<ul>
+<li><p><strong>Poor Design</strong>: The map could be improved by including a legend that explains what each color and ring represents, such as earthquake intensity or magnitude. The absence of gridlines for latitude and longitude also makes it difficult to determine the exact location of the epicenter and its relation to surrounding areas.</p></li>
+<li><p><strong>Color Choices</strong>: The current colors, primarily shades of blue and green, may seem intuitive but are not labeled or differentiated clearly. If these circles are meant to represent varying seismic intensities, the color contrast should be sharper, with more distinct shades to represent different levels of severity.</p></li>
+<li><p><strong>Minimal Labels</strong>: The map lacks key information, such as the earthquake’s magnitude, depth, and exact time. These details are crucial to understanding the event and should be included in the graphic. Additionally, cities or towns within the affected areas should be labeled more prominently to give a clearer sense of the earthquake’s impact on populated regions.</p></li>
+<li><p><strong>Scale</strong>: The map’s scale seems suitable for displaying the regional impacts of the earthquake, but it lacks a scale bar to indicate distances. This makes it difficult to assess how far the seismic effects extended from the epicenter. Including a scale in miles or kilometers would improve viewers�� understanding of the geographical scope of the event.</p></li>
+</ul></li>
+</ol>
+<p>In summary, while the data is reliable, the design and presentation of the map fail to clearly communicate the earthquake’s impact. Improving the legend, color scheme, labeling, and scale would help make the map more informative and easier to interpret for viewers.</p>
 
 
 

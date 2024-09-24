@@ -1,0 +1,28 @@
+---
+title: "Changho Lee"
+---
+
+I am a doctoral student studying Geospatial Information Sciences.
+
+Research Interest
+
+-   Spatial Statistics
+
+-   Spatial Optimization
+
+-   Machine and Deep Learning
+
+Contacts: [changho.lee\@utdallas.edu](matilto:changho.lee@utdallas.edu) / [Website](https://geo-chlee.github.io)
+
+```{r}
+#| label: load-packages
+#| message: false
+#| include: false
+
+library(tidyverse)
+library(sf)
+library(ggspatial)
+library(rnaturalearth)
+library(tidygeocoder)
+library(maps)
+```
