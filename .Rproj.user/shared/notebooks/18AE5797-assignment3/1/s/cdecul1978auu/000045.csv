@@ -1,0 +1,6 @@
+"0",""
+"0","# Overlay boxplot for 'OJ' (Orange Juice group)"
+"0","boxplot(len ~ dose, data = ToothGrowth, add = TRUE,"
+"0","        boxwex = 0.25, at = 1:3 + 0.2,"
+"0","        subset= supp == ""OJ"", col=colors_oj, # Use custom color"
+"0","        pch=19) # Custom plotting character (circle)"

@@ -1,0 +1,5 @@
+"0",""
+"0","# Add a legend with the custom colors"
+"0","legend(1.5, 9, c(""Ascorbic Acid"", ""Orange Juice""), "
+"0","       fill = c(colors_vc, colors_oj), "
+"0","       bty=""n"")"

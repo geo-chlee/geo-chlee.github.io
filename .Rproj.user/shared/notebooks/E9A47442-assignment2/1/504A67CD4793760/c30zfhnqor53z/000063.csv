@@ -1,0 +1,8 @@
+"0",""
+"0","#  Examples of standard high-level plots "
+"0","#  In each case, extra output is also added using low-level "
+"0","#  plotting functions."
+"0","# "
+"0",""
+"0","# Setting the parameter (3 rows by 2 cols)"
+"0","par(mfrow=c(3, 2))"

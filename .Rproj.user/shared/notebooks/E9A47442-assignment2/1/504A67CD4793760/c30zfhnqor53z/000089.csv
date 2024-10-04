@@ -1,0 +1,2 @@
+"0","hist(Y, breaks=seq(-3.5, 3.5), ylim=c(0, 0.5), "
+"0","     col=""gray80"", freq=FALSE)"

@@ -1,0 +1,7 @@
+"0",""
+"0","# mean city MPG"
+"0","barplot(mc$cty, names.arg = mc$class, "
+"0","        horiz = TRUE, col = ""white"", border = ""black"", "
+"0","        xlab = ""Mean MPG"", ylab = """", "
+"0","        xlim = c(0, 35),"
+"0","        main = ""City"", las = 1)"

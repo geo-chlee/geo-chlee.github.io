@@ -1,0 +1,5 @@
+"0","boxplot(len ~ dose, data = ToothGrowth,"
+"0","        boxwex = 0.25, at = 1:3 - 0.2,"
+"0","        subset= supp == ""VC"", col=""white"","
+"0","        xlab="""","
+"0","        ylab=""tooth length"", ylim=c(0,35))"

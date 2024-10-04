@@ -1,0 +1,3 @@
+"0",""
+"0","# Piechart"
+"0","par(mar=c(0, 2, 1, 2), xpd=FALSE, cex=0.5)"

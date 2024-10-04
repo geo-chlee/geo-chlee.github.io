@@ -1,0 +1,15 @@
+# Load required libraries
+library(ggplot2)
+library(RColorBrewer)
+
+# Generate some sample data
+set.seed(123)
+data <- data.frame(
+  category = factor(rep(1:15, each = 10)),
+  x = rep(1:10, times = 15),
+  y = rnorm(150)
+)
+
+# Use ColorBrewer for 15 qualitative colors
+qual_colors <- brewer.pal(12, "Set3") # Get 12 colors from Set3 palette
+qual_colors <- c(qual_colors, brewer.pal(3, "Set2")) # Add 3 more colors from Set2 palette

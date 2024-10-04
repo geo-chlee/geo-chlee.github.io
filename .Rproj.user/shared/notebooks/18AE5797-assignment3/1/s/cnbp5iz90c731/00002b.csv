@@ -1,0 +1,1 @@
+"0","plot(anscombe$x4,anscombe$y4,xlab=""fourth X"",ylab=""fourth Y"")"

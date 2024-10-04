@@ -1,0 +1,5 @@
+"0","### Paul Murrell's R examples (selected)"
+"0",""
+"0","## Start plotting from basics "
+"0","# Note the order"
+"0","plot(pressure, pch=16)  # Can you change pch?"

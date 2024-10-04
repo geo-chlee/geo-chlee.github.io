@@ -1,0 +1,2 @@
+"0","mtext(sub("" "", ""\n"", colnames(VADeaths)),"
+"0","      at=midpts, side=1, line=0.5, cex=0.5)"

@@ -1,0 +1,4 @@
+"0","text(rep(midpts, each=5), apply(VADeaths, 2, cumsum) - VADeaths/2,"
+"0","     VADeaths, "
+"0","     col=rep(c(""white"", ""black""), times=3:2), "
+"0","     cex=0.8)"

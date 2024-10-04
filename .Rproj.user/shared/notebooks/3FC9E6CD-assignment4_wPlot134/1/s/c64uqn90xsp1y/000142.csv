@@ -1,0 +1,1 @@
+"0","text(x = p, y = heights/2, labels = uniq$vars, cex=ifelse(uniq$vars%in%c(""Land rover"",""Lincoln"",""Mercury"",""Pontiac""),0.5,1), srt=90)"

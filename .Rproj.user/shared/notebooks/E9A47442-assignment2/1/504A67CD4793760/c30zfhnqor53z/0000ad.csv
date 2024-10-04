@@ -1,0 +1,4 @@
+"0","pie.sales <- c(0.12, 0.3, 0.26, 0.16, 0.04, 0.12)"
+"0","names(pie.sales) <- c(""Blueberry"", ""Cherry"","
+"0","                      ""Apple"", ""Boston Cream"", ""Other"", ""Vanilla"")"
+"0","pie(pie.sales, col = gray(seq(0.3,1.0,length=6))) "
