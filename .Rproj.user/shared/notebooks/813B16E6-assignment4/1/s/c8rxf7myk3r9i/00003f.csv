@@ -1,7 +1,0 @@
-"0",""
-"0","# mean highway MPG"
-"0","barplot(mh$hwy, names.arg = mh$class,"
-"0","        horiz = TRUE, col = ""grey"", border = ""black"","
-"0","        xlab = ""Mean MPG"", ylab = ""Type of Vehicle"","
-"0","        xlim = c(0, 35),"
-"0","        main = ""Highway"", las = 1)"
