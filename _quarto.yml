@@ -19,8 +19,15 @@ website:
             href: assignment3.qmd
           - text: Assignment 4
             href: assignment4.qmd
+          - text: Assignment 5
+            href: assignment5.qmd
+          - text: Assignment 6
+            href: assignment6.qmd
           - text: Previous Work
             href: prev_assignment1.qmd
+      - href: geovis.qmd
+        text: GeoVis-Final Project
+        
 
 format:
   html:

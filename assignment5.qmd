@@ -2,8 +2,180 @@
 title: "Assignment5"
 ---
 
-About this site
+1.  Using sample datasets or own data, create the following charts using only R graphics functions (i.e. without using any other packages). Be sure you customize the chart with your own style/theme (e.g. font, color, pch, etc.)
+
+<!-- -->
+
+a.  Histogram
 
 ```{r}
-1 + 1
+library(ggplot2)
+
+data<-mpg
+
+## a. Histogram.
+hist(mpg$hwy, 
+     main="Histogram of Highway MPG", 
+     col="lightblue", 
+     border="darkblue", 
+     xlab="Highway MPG", 
+     ylab="Frequency", 
+     font.main=2, font.lab=4)
+
+```
+
+b.  Barchart
+c.  Vertical
+
+```{r}
+barplot(table(mpg$class), 
+        main="Bar Chart of Car Classes", 
+        col="coral", 
+        xlab="Car Class", 
+        ylab="Frequency", 
+        font.main=2)
+
+```
+
+ii. Horizontal
+
+```{r}
+barplot(table(mpg$class), 
+        main="Horizontal Bar Chart of Car Classes", 
+        col="lightgreen", 
+        horiz=TRUE, 
+        xlab="Frequency", 
+        ylab="Car Class", 
+        font.main=2)
+
+```
+
+c.  Piechart
+
+```{r}
+pie(table(mpg$class), 
+    main="Pie Chart of Car Classes", 
+    col=rainbow(length(unique(mpg$class))), 
+    font.main=2)
+
+```
+
+d.  Boxplot
+
+```{r}
+boxplot(hwy ~ class, data=mpg, 
+        main="Boxplot of Highway MPG by Car Class", 
+        col=c("skyblue", "pink", "lightgreen"), 
+        xlab="Car Class", 
+        ylab="Highway MPG", 
+        border="darkred", 
+        font.main=2)
+
+```
+
+e.  Scatterplot
+
+```{r}
+plot(mpg$displ, mpg$hwy, 
+     main="Scatterplot of Displacement vs Highway MPG", 
+     xlab="Displacement (liters)", 
+     ylab="Highway MPG", 
+     col="blue", 
+     pch=16, 
+     font.main=2, font.lab=4)
+
+```
+
+2.  Repeat 1 using ggplot2, with your own style
+
+<!-- -->
+
+a.  Histogram
+
+```{r}
+ggplot(mpg, aes(x=hwy)) +
+  geom_histogram(binwidth=1, fill="lightblue", color="darkblue") +
+  ggtitle("Histogram of Highway MPG") +
+  theme_minimal() +
+  theme(plot.title = element_text(face="bold"))
+
+```
+
+b.  Bar Chart
+c.  Vertical
+
+```{r}
+ggplot(mpg, aes(x=class)) +
+  geom_bar(fill="coral") +
+  ggtitle("Bar Chart of Car Classes") +
+  theme_minimal() +
+  theme(plot.title = element_text(face="bold"))
+
+```
+
+ii. Horizontal
+
+```{r}
+ggplot(mpg, aes(x=class)) +
+  geom_bar(fill="lightgreen") +
+  coord_flip() +
+  ggtitle("Horizontal Bar Chart of Car Classes") +
+  theme_minimal() +
+  theme(plot.title = element_text(face="bold"))
+
+```
+
+c.  Pie Chart
+
+```{r}
+ggplot(mpg, aes(x="", fill=class)) +
+  geom_bar(width=1) +
+  coord_polar(theta="y") +
+  ggtitle("Pie Chart of Car Classes") +
+  theme_void() +
+  theme(plot.title = element_text(face="bold"))
+
+```
+
+d.  Boxplot
+
+```{r}
+ggplot(mpg, aes(x=class, y=hwy, fill=class)) +
+  geom_boxplot(color="darkred") +
+  ggtitle("Boxplot of Highway MPG by Car Class") +
+  theme_minimal() +
+  theme(plot.title = element_text(face="bold")) +
+  scale_fill_manual(values=c("skyblue", "pink", "lightgreen", "yellow", "purple", "orange", "red"))
+
+```
+
+e.  Scatterplot
+
+```{r}
+ggplot(mpg, aes(x=displ, y=hwy)) +
+  geom_point(color="blue", size=3) +
+  ggtitle("Scatterplot of Displacement vs Highway MPG") +
+  theme_minimal() +
+  theme(plot.title = element_text(face="bold"))
+
+```
+
+3.  Export the charts using different formats such as:
+
+```{r}
+# a. pdf
+#ggsave("scatterplot.pdf", width=5, height=4)
+
+# b. jpg
+#ggsave("scatterplot.jpg", width=5, height=4)
+
+# c. svg
+#ggsave("scatterplot.svg", width=5, height=4)
+
+# d. tiff
+#ggsave("scatterplot.tiff", width=5, height=4)
+
+# e. bmp
+#ggsave("scatterplot.bmp", width=5, height=4)
+
 ```

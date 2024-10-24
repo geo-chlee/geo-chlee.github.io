@@ -1,0 +1,7 @@
+---
+title: "My Document with Embedded Shiny App"
+format: html
+---
+
+## Embedded Shiny App
+<iframe src="https://geovisutd.shinyapps.io/geovis5/" width="100%" height="800" style="border:none;"></iframe>

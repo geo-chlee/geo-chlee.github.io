@@ -1,0 +1,12 @@
+name: Assignment6_mtcars
+title: Assignment6_mtcars
+username: geovisutd
+account: geovisutd
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 13114895
+bundleId: 9262006
+url: https://geovisutd.shinyapps.io/Assignment6_mtcars/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
