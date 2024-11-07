@@ -1,0 +1,12 @@
+name: Assignment7
+title: Assignment7
+username: geovisutd
+account: geovisutd
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 13258614
+bundleId: 9326196
+url: https://geovisutd.shinyapps.io/Assignment7/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE

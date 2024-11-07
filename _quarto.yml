@@ -23,6 +23,8 @@ website:
             href: assignment5.qmd
           - text: Assignment 6
             href: assignment6.qmd
+          - text: Assignment 7
+            href: assignment7.qmd
           - text: Previous Work
             href: prev_assignment1.qmd
       - href: geovis.qmd
