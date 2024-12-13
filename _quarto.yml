@@ -25,10 +25,12 @@ website:
             href: assignment6.qmd
           - text: Assignment 7
             href: assignment7.qmd
+          - text: Assignment 8
+            href: assignment8.qmd
+          - text: GeoVis-Final Project
+            href: geovis.qmd
           - text: Previous Work
             href: prev_assignment1.qmd
-      - href: geovis.qmd
-        text: GeoVis-Final Project
         
 
 format:

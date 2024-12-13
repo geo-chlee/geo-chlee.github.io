@@ -58,9 +58,9 @@
   {
     "objectID": "geovis.html",
     "href": "geovis.html",
-    "title": "GeoVis",
+    "title": "Final Project Deliverable",
     "section": "",
-    "text": "Linking to GEOS 3.12.1, GDAL 3.8.4, PROJ 9.3.1; sf_use_s2() is TRUE\n\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\n\nDriver: OpenFileGDB \nAvailable layers:\n                         layer_name geometry_type features fields crs_name\n1  tavg_monthly_1985to2023_cntyFIPS Multi Polygon     3235    485    NAD83\n2  tmax_monthly_1985to2023_cntyFIPS Multi Polygon     3235    485    NAD83\n3  tmin_monthly_1985to2023_cntyFIPS Multi Polygon     3235    485    NAD83\n4   pcp_monthly_1985to2023_cntyFIPS Multi Polygon     3235    485    NAD83\n5   cdd_monthly_1985to2023_cntyFIPS Multi Polygon     3235    485    NAD83\n6   hdd_monthly_1985to2023_cntyFIPS Multi Polygon     3235    485    NAD83\n7  pdsi_monthly_1985to2023_cntyFIPS Multi Polygon     3235    485    NAD83\n8  phdi_monthly_1985to2023_cntyFIPS Multi Polygon     3235    485    NAD83\n9  pmdi_monthly_1985to2023_cntyFIPS Multi Polygon     3235    485    NAD83\n10 zndx_monthly_1985to2023_cntyFIPS Multi Polygon     3235    485    NAD83\n\n\nReading layer `tavg_monthly_1985to2023_cntyFIPS' from data source \n  `E:\\Onedrive_UTD\\OneDrive - The University of Texas at Dallas\\GDrive\\UTD_LIFE\\05Study\\24 Fall - EPPS6356_DataVisualization\\project\\monthly_1985to2023_cntyFIPS_detailed.gdb' \n  using driver `OpenFileGDB'\nSimple feature collection with 3235 features and 485 fields\nGeometry type: MULTIPOLYGON\nDimension:     XY\nBounding box:  xmin: -179.2311 ymin: -14.60181 xmax: 179.8597 ymax: 71.43979\nGeodetic CRS:  NAD83\n\n\nReading layer `pcp_monthly_1985to2023_cntyFIPS' from data source \n  `E:\\Onedrive_UTD\\OneDrive - The University of Texas at Dallas\\GDrive\\UTD_LIFE\\05Study\\24 Fall - EPPS6356_DataVisualization\\project\\monthly_1985to2023_cntyFIPS_detailed.gdb' \n  using driver `OpenFileGDB'\nSimple feature collection with 3235 features and 485 fields\nGeometry type: MULTIPOLYGON\nDimension:     XY\nBounding box:  xmin: -179.2311 ymin: -14.60181 xmax: 179.8597 ymax: 71.43979\nGeodetic CRS:  NAD83\n\n\nCoordinate Reference System:\n  User input: EPSG:4269 \n  wkt:\nGEOGCRS[\"NAD83\",\n    DATUM[\"North American Datum 1983\",\n        ELLIPSOID[\"GRS 1980\",6378137,298.257222101,\n            LENGTHUNIT[\"metre\",1]]],\n    PRIMEM[\"Greenwich\",0,\n        ANGLEUNIT[\"degree\",0.0174532925199433]],\n    CS[ellipsoidal,2],\n        AXIS[\"geodetic latitude (Lat)\",north,\n            ORDER[1],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        AXIS[\"geodetic longitude (Lon)\",east,\n            ORDER[2],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n    USAGE[\n        SCOPE[\"Geodesy.\"],\n        AREA[\"North America - onshore and offshore: Canada - Alberta; British Columbia; Manitoba; New Brunswick; Newfoundland and Labrador; Northwest Territories; Nova Scotia; Nunavut; Ontario; Prince Edward Island; Quebec; Saskatchewan; Yukon. Puerto Rico. United States (USA) - Alabama; Alaska; Arizona; Arkansas; California; Colorado; Connecticut; Delaware; Florida; Georgia; Hawaii; Idaho; Illinois; Indiana; Iowa; Kansas; Kentucky; Louisiana; Maine; Maryland; Massachusetts; Michigan; Minnesota; Mississippi; Missouri; Montana; Nebraska; Nevada; New Hampshire; New Jersey; New Mexico; New York; North Carolina; North Dakota; Ohio; Oklahoma; Oregon; Pennsylvania; Rhode Island; South Carolina; South Dakota; Tennessee; Texas; Utah; Vermont; Virginia; Washington; West Virginia; Wisconsin; Wyoming. US Virgin Islands. British Virgin Islands.\"],\n        BBOX[14.92,167.65,86.45,-40.73]],\n    ID[\"EPSG\",4269]]\n\n\nCoordinate Reference System:\n  User input: EPSG:4269 \n  wkt:\nGEOGCRS[\"NAD83\",\n    DATUM[\"North American Datum 1983\",\n        ELLIPSOID[\"GRS 1980\",6378137,298.257222101,\n            LENGTHUNIT[\"metre\",1]]],\n    PRIMEM[\"Greenwich\",0,\n        ANGLEUNIT[\"degree\",0.0174532925199433]],\n    CS[ellipsoidal,2],\n        AXIS[\"geodetic latitude (Lat)\",north,\n            ORDER[1],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        AXIS[\"geodetic longitude (Lon)\",east,\n            ORDER[2],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n    USAGE[\n        SCOPE[\"Geodesy.\"],\n        AREA[\"North America - onshore and offshore: Canada - Alberta; British Columbia; Manitoba; New Brunswick; Newfoundland and Labrador; Northwest Territories; Nova Scotia; Nunavut; Ontario; Prince Edward Island; Quebec; Saskatchewan; Yukon. Puerto Rico. United States (USA) - Alabama; Alaska; Arizona; Arkansas; California; Colorado; Connecticut; Delaware; Florida; Georgia; Hawaii; Idaho; Illinois; Indiana; Iowa; Kansas; Kentucky; Louisiana; Maine; Maryland; Massachusetts; Michigan; Minnesota; Mississippi; Missouri; Montana; Nebraska; Nevada; New Hampshire; New Jersey; New Mexico; New York; North Carolina; North Dakota; Ohio; Oklahoma; Oregon; Pennsylvania; Rhode Island; South Carolina; South Dakota; Tennessee; Texas; Utah; Vermont; Virginia; Washington; West Virginia; Wisconsin; Wyoming. US Virgin Islands. British Virgin Islands.\"],\n        BBOX[14.92,167.65,86.45,-40.73]],\n    ID[\"EPSG\",4269]]\n\n\nShiny applications not supported in static R Markdown documents"
+    "text": "final project report: View"
   },
   {
     "objectID": "assignment6.html",
@@ -75,5 +75,26 @@
     "title": "Assignment6",
     "section": "",
     "text": "Assignment 6 - b\n\n\nThe Shiny app from this link is embedded below:\n\n\n\n\nAssignment 6 - d\n\n\nThe Shiny app from this link is embedded below:"
+  },
+  {
+    "objectID": "assignment7.html",
+    "href": "assignment7.html",
+    "title": "Assignment7",
+    "section": "",
+    "text": "Assignment 7\n\n\nThe Shiny app for assignment 7 from this link is embedded below:"
+  },
+  {
+    "objectID": "assignment8.html",
+    "href": "assignment8.html",
+    "title": "Assignment8",
+    "section": "",
+    "text": "Dashboard: this link is embedded below:"
+  },
+  {
+    "objectID": "geovis.html#final-project-presentation",
+    "href": "geovis.html#final-project-presentation",
+    "title": "Final Project Deliverable",
+    "section": "Final Project Presentation",
+    "text": "Final Project Presentation"
   }
 ]

@@ -2,7 +2,9 @@
   "hash": "9c22206444fafded42208df65520f691",
   "result": {
     "markdown": "---\ntitle: \"Changho Lee\"\n---\n\n\nI am a doctoral student studying Geospatial Information Sciences.\n\nResearch Interest\n\n-   Spatial Statistics\n\n-   Spatial Optimization\n\n-   Machine and Deep Learning\n\nContacts: [changho.lee\\@utdallas.edu](matilto:changho.lee@utdallas.edu) / [Website](https://geo-chlee.github.io)\n\n\n\n",
-    "supporting": [],
+    "supporting": [
+      "index_files"
+    ],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],
