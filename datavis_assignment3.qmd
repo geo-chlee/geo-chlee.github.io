@@ -1,0 +1,180 @@
+---
+title: "Assignment3"
+sidebar: datavis
+---
+
+1.  **Choose one of the six charts and explain how it is configured by adding documentation to the codes.**
+
+```{r}
+# Random data
+Y <- rnorm(50)
+# Make sure no Y exceed [-3.5, 3.5]
+Y[Y < -3.5 | Y > 3.5] <- NA # Selection/set range
+x <- seq(-3.5, 3.5, .1)
+dn <- dnorm(x)
+par(mar=c(4.5, 4.1, 3.1, 0))
+hist(Y, breaks=seq(-3.5, 3.5), ylim=c(0, 0.5), col="gray80", freq=FALSE)
+lines(x, dnorm(x), lwd=2)
+par(mar=c(5.1, 4.1, 4.1, 2.1))
+
+```
+
+This code is to draw histogram with randomly generated values.
+
+\(1\) Generate random data based on normal distribution (mu=1, sd = 0)
+
+Y \<- rnorm(50)
+
+\(2\) Filter data which make sure values between -3.5 and +3.5
+
+Y\[Y \< -3.5 \| Y \> 3.5\] \<- NA \# Selection/set range
+
+\(3\) Generate squential values with 0.1 interval with minimum -3.5 and maximum 3.5
+
+x \<- seq(-3.5, 3.5, .1)
+
+\(4\) \[irrelevent to histogram\] Get probability of squential values on normal distribution.
+
+dn \<- dnorm(x)
+
+\(5\) Set margins for plot area in order of c(bottom, left, top, right)
+
+par(mar=c(4.5, 4.1, 3.1, 0))
+
+\(6\) Draw histogram of Y
+
+-   Set breaks between -3.5 and 3.5 for x-axis ticks
+
+-   Set the range of Y values (-3.5 \~ 3.5) to display using ylim
+
+-   Set color for the plot as 80% black for gray
+
+-   Show probability instead of frequency by setting freq as FALSE
+
+hist(Y, breaks=seq(-3.5, 3.5), ylim=c(0, 0.5), col="gray80", freq=FALSE)
+
+\(7\) Draw normal distribuiton guideline to see if data Y follows normal distribution.
+
+lines(x, dnorm(x), lwd=2)
+
+\(8\) Set plot margin again.
+
+par(mar=c(5.1, 4.1, 4.1, 2.1))
+
+2.1. Compare the regression models
+
+```{r}
+# Create four model objects
+data(anscombe)  # Load Anscombe's data
+lm1 <- lm(y1 ~ x1, data=anscombe)
+summary(lm1)
+lm2 <- lm(y2 ~ x2, data=anscombe)
+summary(lm2)
+lm3 <- lm(y3 ~ x3, data=anscombe)
+summary(lm3)
+lm4 <- lm(y4 ~ x4, data=anscombe)
+summary(lm4)
+
+
+```
+
+2.2. Compare different ways to create the plots (e.g. changing colors, line types, plot characters)
+
+```{r}
+par(mfrow=c(2, 2),mar=c(4.5, 4.1, 3.1, 0.3))
+plot(anscombe$x1,anscombe$y1,col="blue")
+abline(coefficients(lm1))
+plot(anscombe$x2,anscombe$y2)
+abline(coefficients(lm2),lty=3)
+plot(anscombe$x3,anscombe$y3)
+abline(coefficients(lm3),col="red")
+plot(anscombe$x4,anscombe$y4,xlab="fourth X",ylab="fourth Y")
+abline(coefficients(lm4))
+
+```
+
+To make plots to compare them effectively, we can adjust plot elements.
+
+1\) Change Color for data : It helps identify which data should be focused.
+
+2\) Change guide line symbol: To highlight the distribution of data, change guideline symbol
+
+3\) Chang guide line color: To highlight the trend line of data, change guideline color
+
+**3.Can you finetune the charts without using other packages (consult RGraphics by Murrell)?**
+
+a.  Use a serif font
+b.  Try non-default colors
+c.  Use own plotting character
+
+```{r}
+
+# Custom boxplot with fine-tuned aesthetics
+
+# Set graphical parameters for font and layout
+par(family = "serif", mar=c(5, 5, 5, 0))
+
+# Define custom colors
+colors_vc <- "lightblue"  # Vitamin C - Ascorbic Acid
+colors_oj <- "lightgreen" # Orange Juice
+
+# Create boxplot for 'VC' (Vitamin C Ascorbic Acid group)
+boxplot(len ~ dose, data = ToothGrowth,
+        boxwex = 0.25, at = 1:3 - 0.2,
+        subset= supp == "VC", col=colors_vc, # Use custom color
+        xlab="",
+        ylab="Tooth Length", ylim=c(0,35),
+        pch=17) # Custom plotting character (triangle)
+
+# Add x-axis label
+mtext("Vitamin C Dose (mg)", side=1, line=2.5, cex=0.8)
+
+# Overlay boxplot for 'OJ' (Orange Juice group)
+boxplot(len ~ dose, data = ToothGrowth, add = TRUE,
+        boxwex = 0.25, at = 1:3 + 0.2,
+        subset= supp == "OJ", col=colors_oj, # Use custom color
+        pch=19) # Custom plotting character (circle)
+
+# Add a legend with the custom colors
+legend(1.5, 9, c("Ascorbic Acid", "Orange Juice"), 
+       fill = c(colors_vc, colors_oj), 
+       bty="n")
+
+# Reset graphical parameters
+par(mar=c(5.1, 4.1, 4.1, 2.1))
+
+
+```
+
+4.  **How about with ggplot2? (use tidyverse package)**
+
+```{r}
+# Load the necessary package
+library(tidyverse)
+
+# Custom colors for the boxplot
+custom_colors <- c("lightblue", "lightgreen")
+
+# Create the customized boxplot
+ggplot(ToothGrowth, aes(x = factor(dose), y = len, fill = supp)) +
+  
+  # Boxplot with custom fill colors and adjusted dodge width
+  geom_boxplot(position = position_dodge(0.8), width = 0.5) +
+  
+  # Add jittered points with custom shape
+  geom_jitter(position = position_dodge(0.8), shape = 17, size = 2, color = "black") +
+  
+  # Set axis labels
+  labs(x = "Vitamin C Dose (mg)", y = "Tooth Length") +
+  
+  # Custom fill colors for the two groups
+  scale_fill_manual(values = custom_colors, labels = c("Ascorbic Acid", "Orange Juice")) +
+  
+  # Add a theme with a serif font
+  theme_minimal(base_family = "serif") +
+  
+  # Adjust the legend
+  theme(legend.title = element_blank(),
+        legend.position = "top")
+
+```

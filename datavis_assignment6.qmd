@@ -1,0 +1,25 @@
+---
+title: "Assignment6"
+sidebar: datavis
+format: 
+  html:
+    page-layout: full
+---
+
+::: column-page
+<h1>Assignment 6 - b</h1>
+
+<p>The Shiny app from <a href="https://geovisutd.shinyapps.io/Assignment6_mtcars/" target="_blank">this link</a> is embedded below:</p>
+
+<iframe src="https://geovisutd.shinyapps.io/Assignment6_mtcars/" title="Assignment 6 - b" width="100%" height="800" style="border:none;">
+
+</iframe>
+
+<h1>Assignment 6 - d</h1>
+
+<p>The Shiny app from <a href="https://geovisutd.shinyapps.io/geovis5/" target="_blank">this link</a> is embedded below:</p>
+
+<iframe src="https://geovisutd.shinyapps.io/geovis5/" title="Assignment 6 - d" width="100%" height="800" style="border:none;">
+
+</iframe>
+:::

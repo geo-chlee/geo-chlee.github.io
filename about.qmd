@@ -1,5 +1,71 @@
 ---
-title: "CV"
+title: "Resume"
 ---
 
-<a href="https://drive.google.com/file/d/1laASlvFunN2zgOGFJKv3PPRzNvpYMjuJ/view?usp=sharing" target="_blank">Changho's CV</a>
+#### **Changho Lee \| Ph.D. in GIS (Expected Graduation: Dec 2025)** [changho.lee\@utdallas.edu](mailto:changho.lee@utdallas.edu%20%7C)
+
+GIS Specialist with expertise in GIS web applications, geospatial database schemas, and automated data processing pipelines to support land analytics, location intelligence, and data center development due diligence. Contributed to 11 cross-functional GIS projects with researchers, engineers, and municipal stakeholders, producing 15 professional presentations and 14 publications. Skilled in scalable geospatial data management and integration for metropolitan regions of 15M+ residents across 31 cities, with applied experience in system architecture, GIS-based analysis, and land asset and infrastructure capacity planning???please visit my CV ([link](https://drive.google.com/file/d/1B8B6w03zY2rqpHqcnGkgqcaWnhoahf8e/view?usp=sharing)) for further details.
+
+# **WORK EXPERIENCE**
+
+**Research Assistant** University of Texas at Dallas, Richardson, TX (Jan 2021 -- Dec 2025)
+
+-   Implemented spatial statistical models to estimate missing or unobserved spatial data, enhancing the accuracy and efficiency of spatial optimization models.
+
+-   Developed network-based GIS optimization solutions using p-median location models on Plano police patrol networks (published in ISPRS IJGI, 2024), improving service coverage and resource allocation
+
+**GIS Researcher** Suwon Research Institute, South Korea (Oct 2018 -- Dec 2019)
+
+-   Built GIS workflows and analysis models integrating remote sensing and geodatabases to support infrastructure and ecological network planning. Results informed municipal ordinances and policies.
+
+-   Collaborated with cross-functional teams of engineers, faculty, and stakeholders to build and test geospatial tools, contributing to location intelligence platforms supporting infrastructure planning
+
+**GIS Researcher** Gyeonggi Research Institute, South Korea (Sep 2015 -- Aug 2017)
+
+-   Analyzed architectural and infrastructure data across 31 cities in Gyeonggi-Do using GIS, contributing to policies on historic architecture preservation and regional planning strategies.
+
+**GIS Analyst (Sergeant)** Korea National Defense Geospatial-Intelligence Agency (Jan 2009 -- Nov 2010)
+
+-   Conducted daily GIS operations in a fast-paced environment, updating objects from airborne imagery.
+
+-   Streamlined geodatabase management and implemented GIS-based analysis tools for mission planning
+
+# **EDUCATION**
+
+**Ph.D. in Geospatial Information Science \| M.S. in Geosciences** (Jan 2021 -- Dec 2025)
+
+The University of Texas at Dallas, United States
+
+-   **Dissertation (GIS)**: Enhancing the quality and efficiency of spatial optimization solutions using geospatial techniques
+
+-   **Thesis (Geosciences)**: Evaluation of land use-based coherence changes after earthquake using spatial autocorrelation method
+
+-   Graduate Certificate in Data Science, specializing in Machine/Deep Learning
+
+**M.A. in Geography Education** (Mar 2013 -- Feb 2015)
+
+Seoul National University, Seoul, South Korea
+
+-   **Thesis**: An analysis of correlation between intra-urban land surface temperature distribution and socio-economic indices: An application of Seoul area census output statistics and Landsat 7 ETM+ imagery
+
+**B.A. in Geography Education \| B.S. in Geology** (Mar 2007 -- Feb 2013)
+
+Kyungpook National University, Daegu, South Korea
+
+-   Secondary School Geography Teacher Certificate, Ministry of Education, S. Korea
+
+# **ACHIEVEMENTS**
+
+-   Published 14 peer-reviewed articles and delivered 15 conference presentations on GIS, optimization, and enterprise-scale geospatial applications, demonstrating technical leadership and thought expertise. (See my Google Scholar profile: [link](https://scholar.google.com/citations?user=iXk36EoAAAA&user=iXk36EoAAAAJ)).
+
+-   Secured \$28,900+ in competitive research awards and grants from organizations including Pioneer Natural Resources Inc. and the Texas DK Foundation.
+
+-   Founded and led the Korean Student Association at UT Dallas, coordinating events with Samsung and Lotte Chemical, showcasing program management and cross-functional collaboration skills.
+
+# **SKILLS**
+
+**GIS:** ArcGIS (Desktop, Pro, Online), GIS programming via Python, Managing Geodatabase on AWS
+
+**Programming & Data Science:** Python (PySpark and Pandas for data management, Scikit-learn and PyTorch for Machine & Deep learning), R, SAS, and Fortran for statistical modeling, SQL
+
+**Visualization & BI Tools:** Tableau, Power BI, Web-mapping (ArcGIS Dashboard, Google maps)

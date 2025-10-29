@@ -1,0 +1,65 @@
+---
+title: "Assignment3"
+id: datacollect
+format: html
+---
+
+**1) Get data**
+
+Geography: Texas, Collin County, Unit: Census tracts, Variables: Total population and Population speaking only English
+
+```{r, echo=FALSE}
+# Packages
+library(tidycensus)
+library(tigris)
+library(sf)
+library(dplyr)
+library(ggplot2)
+library(readr)
+
+# (Optional) nicer sf defaults & caching
+options(tigris_use_cache = TRUE, tigris_class = "sf")
+
+collin_geog<-tracts(state = "TX", county = "Collin County", year = 2023, cb = TRUE)
+
+vars_bg <- c(
+  total_pop   = "B01001_001E",
+  SpkEng = "B16004_025E" # B16004_025E: Pop 18-64 Speak only English (ACS 5-Yr)
+)
+
+acs_bg_vars <- get_acs(
+  geography = "tract",
+  state     = "TX",
+  county    = "Collin County",
+  survey    = "acs5",
+  year      = 2023,
+  variables = vars_bg,
+  output    = "wide",
+  geometry  = TRUE
+  
+)
+
+acs_bg_vars<-left_join(acs_bg_vars,st_drop_geometry(collin_geog[,c("GEOID","ALAND")]),by="GEOID")
+
+```
+
+**2) Plot map**
+
+```{r}
+acs_bg_vars$popden<-acs_bg_vars$total_pop/acs_bg_vars$ALAND
+acs_bg_vars$rate_eng<-acs_bg_vars$SpkEng/acs_bg_vars$total_pop
+plot(acs_bg_vars["popden"],main="Population Density (persons/sq.m) in Collin CO, TX")
+plot(acs_bg_vars["rate_eng"],main="The rate of population speaking only English in Collin")
+```
+
+**3) Show Table**
+
+```{r}
+knitr::kable(st_drop_geometry(acs_bg_vars[c(1:10,(nrow(acs_bg_vars)-10):nrow(acs_bg_vars)),]),digits=4, caption = "Statistics of Collin CO, TX")
+```
+
+**4) Interpretation**
+
+Population density shows higher values within the City of Plano administrative boundary, while its surrounding census tracts have lower values. Specifically, it shows that the 25th percentile population density is 0.00092 and the 75th percentile density is 0.00214.
+
+However, the spatial patterns of the rate of population speaking only English show an opposite pattern to population density. The peripheral census tracts of Plano show a high rate of numbers speaking only English. Specifically, 25th percentile is 0.373 and 75th percentile is 0.484.

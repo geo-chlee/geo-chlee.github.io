@@ -1,0 +1,13 @@
+---
+title: "Final Project Deliverable"
+sidebar: datavis
+format: html
+---
+
+<p>final project report: <a href="UmmeKulsum_FinalProject.pdf" target="_blank">View</a></p>
+
+## Final Project Presentation
+
+<iframe src="ClimateChangeandCrime_UmmeKulsum.pdf" width="100%" height="800" style="border:none;">
+
+</iframe>

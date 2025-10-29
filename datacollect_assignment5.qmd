@@ -1,0 +1,111 @@
+---
+title: "Assignment5"
+id: datacollect
+format: html
+---
+
+a)  **Download ten most recent documents.**
+
+```{r}
+## Scraping Government data
+## Website: GovInfo (https://www.govinfo.gov/app/search/)
+## Prerequisite: Download from website the list of files to be downloaded
+## Designed for background job
+
+# Start with a clean plate and lean loading to save memory
+ 
+gc(reset=T)
+
+# install.packages(c("purrr", "magrittr")
+library(purrr)
+library(magrittr) # Alternatively, load tidyverse
+
+## Set path for reading the listing and home directory
+## For Windows, use "c:\\directory\\subdirectory\\"
+## For Mac, "/Users/YOURNAME/path/"
+
+library(rjson)
+library(jsonlite)
+library(data.table)
+library(readr)
+
+### jsonlite
+gf_list1 = jsonlite::read_json("https://github.com/datageneration/datamethods/raw/refs/heads/master/webdata/govinfo-search-results-2024-10-13T07_18_29.json")
+
+### Extract the list
+govfiles3 <- gf_list1$resultSet
+
+### One more step
+govfiles3 <- gf_list1$resultSet |> dplyr::bind_rows()
+
+
+# Preparing for bulk download of government documents
+pdf_govfiles_url = govfiles3$pdfLink
+pdf_govfiles_id <- govfiles3$index
+
+# Directory to save the pdf's
+# Be sure to create a folder for storing the pdf's
+save_dir <- "D:/downloads"
+
+# Function to download pdfs
+download_govfiles_pdf <- function(url, id) {
+  tryCatch({
+    destfile <- paste0(save_dir, "govfiles_", id, ".pdf")
+    download.file(url, destfile = destfile, mode = "wb") # Binary files
+    Sys.sleep(runif(1, 1, 3))  # Important: random sleep between 1 and 3 seconds to avoid suspicion of "hacking" the server
+    return(paste("Successfully downloaded:", url))
+  },
+  error = function(e) {
+    return(paste("Failed to download:", url))
+  })
+}
+
+# Download files, potentially in parallel for speed
+# Simple timer, can use package like tictoc
+# 
+
+## Try Ten
+start.time <- Sys.time()
+message("Starting downloads")
+#results <- 1:10 %>% 
+  #purrr::map_chr(~ download_govfiles_pdf(pdf_govfiles_url[.], pdf_govfiles_id[.]))
+message("Finished downloads")
+end.time <- Sys.time()
+time.taken <- end.time - start.time
+time.taken
+
+```
+
+**Write simple report on difficulties encountered in the scraping process.**
+
+**How useable the scraped data?**
+
+**How to improve?**
+
+**Report on Web Scraping Process**
+
+1.  Difficulties Encountered During the web scraping process, several challenges were observed.
+
+-   Dynamic web pages: Some websites, such as Investing.com, load data dynamically using JavaScript, which makes it difficult to extract the information directly from the HTML source.
+
+-   Frequent website structure changes: The layout and HTML tags of the website may change without notice, breaking the scraping code.
+
+-   Access restrictions: Some websites block automated requests or limit access through CAPTCHA and rate-limiting systems.
+
+-   Data inconsistency: Extracted tables often contain merged cells, missing values, or symbols (e.g., commas, currency signs) that require cleaning before analysis.
+
+2.  Usability of the Scraped Data
+
+    The scraped data is partially usable. While it provides valuable information such as financial statements and market indicators, it often needs to be cleaned and standardized. Some records may be incomplete or misaligned due to inconsistent HTML formatting. Therefore, preprocessing (e.g., removing symbols, converting data types, handling missing values) is necessary before conducting statistical or economic analysis.
+
+3.  Suggestions for Improvement
+
+-   Use APIs when available: Instead of scraping, official APIs (if provided) are more stable and reliable.
+
+-   Automate error handling: Add exception handling and logging to identify failed scrapes or changed page structures quickly.
+
+-   Schedule regular updates: Automate periodic scraping to maintain an up-to-date dataset.
+
+-   Apply data validation: Implement scripts to check the accuracy and completeness of extracted values.
+
+-   Use advanced tools: Employ libraries like Selenium (for dynamic content) or BeautifulSoup combined with requests in Python for more flexible scraping and parsing.

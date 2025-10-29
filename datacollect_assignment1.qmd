@@ -1,0 +1,7 @@
+---
+title: "Assignment1"
+id: datacollect
+format: html
+---
+
+This Website is created using RStudio Quarto. The Cosmo theme is used for professional look. The navigation bar includes 12 links for connecting to the author's content in different areas.

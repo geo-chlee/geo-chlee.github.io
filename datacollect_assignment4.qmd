@@ -1,0 +1,41 @@
+---
+title: "Assignment4"
+id: datacollect
+format: html
+---
+
+**a) For modifying the program to scrape other tables in Wikipedia,** I chose another table of the *Currency composition of foreign exchange reserves*.
+
+**b) For cleaning up the data frame,** I set new header and remove unnecessary columns and rows
+
+```{r, echo=FALSE}
+library(tidyverse)
+# install.packages("rvest")
+library(rvest)
+
+url <- 'https://en.wikipedia.org/wiki/List_of_countries_by_foreign-exchange_reserves'
+#Reading the HTML code from the Wiki website
+wikiforreserve <- read_html(url)
+class(wikiforreserve)
+
+## Get the XPath data using Inspect element feature in Safari, Chrome or Firefox
+## At Inspect tab, look for <table class=....> tag. Leave the table close
+## Right click the table and Copy XPath, paste at html_nodes(xpath =)
+
+foreignreserve <- wikiforreserve %>%
+  html_nodes(xpath='//*[@id="mw-content-text"]/div[1]/table[2]/tbody') %>%
+  html_table()
+class(foreignreserve)
+fores = foreignreserve[[1]]
+# Skip first row, use second row as column names
+colnames(fores) <- fores[1, ]
+colnames(fores)[2:3] <- c("Year","Quarter")
+fores$Year<-as.character(fores$Year)
+
+fores <- fores[-c(1), -c(1,15)]   # remove first two rows (old header and new header row)
+knitr::kable(fores, align="r",caption="Currency composition of foreign exchange reserves (COFER) (billion U.S$.)",format.args = list(decimal.mark = ",", big.mark = "'"))
+```
+
+**c) Suggest a data plan to acquire web data for research.**
+
+Most data owners prefer to share their data by displaying it on their websites rather than providing direct access to their databases. Because their databases are not publicly available, researchers often need to collect the data manually using web scraping techniques. For example, in the case of Investing.com, we can obtain financial statements of numerous companies through web scraping.

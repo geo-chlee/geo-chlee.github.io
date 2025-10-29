@@ -1,0 +1,24 @@
+---
+title: "Assignment2"
+id: datacollect
+format: html
+---
+
+```{r}
+gtrend_fromWEb <- read.csv("multiTimeline.csv")
+tail(gtrend_fromWEb,20)
+
+```
+
+-   **Dates**: from Sep 20, 2020 to Sep 7, 2025
+
+-   **Interval**: a week
+
+```{r}
+gtrend_fromR <- read.csv("googletrend_R.csv")
+head(gtrend_fromR,20)
+```
+
+**What are differences between the two methods?**
+
+Table schemes are different. For web version, data are organized into wide form which displays keywords at columns. However, for R version, data structure is long form which displays the statistics are recorded in `hits` column and `keyword` column contains information related to the statistics.

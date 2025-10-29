@@ -8,31 +8,53 @@ website:
       - href: index.qmd
         text: Home
       - href: about.qmd
-        text: CV
-      - text: Assignment
+        text: Resume
+      - text: Assignments
         menu:
-          - text: Assignment 1
-            href: assignment1.qmd
-          - text: Assignment 2
-            href: assignment2.qmd
-          - text: Assignment 3
-            href: assignment3.qmd
-          - text: Assignment 4
-            href: assignment4.qmd
-          - text: Assignment 5
-            href: assignment5.qmd
-          - text: Assignment 6
-            href: assignment6.qmd
-          - text: Assignment 7
-            href: assignment7.qmd
-          - text: Assignment 8
-            href: assignment8.qmd
-          - text: GeoVis-Final Project
-            href: geovis.qmd
-          - text: Previous Work
-            href: prev_assignment1.qmd
-        
-
+          - text: Data VIsualization
+            href: datavis_assignment1.html
+          - text: Data Collection
+            href: datacollect_assignment1.qmd
+  
+  sidebar:
+    - id: datavis
+      title: "Data Visualzation Assignments"
+      contents:
+              - text: Assignment 1
+                href: datavis_assignment1.qmd
+              - text: Assignment 2
+                href: datavis_assignment2.qmd
+              - text: Assignment 3
+                href: datavis_assignment3.qmd
+              - text: Assignment 4
+                href: datavis_assignment4.qmd
+              - text: Assignment 5
+                href: datavis_assignment5.qmd
+              - text: Assignment 6
+                href: datavis_assignment6.qmd
+              - text: Assignment 7
+                href: datavis_assignment7.qmd
+              - text: Assignment 8
+                href: datavis_assignment8.qmd
+              - text: GeoVis-Final Project
+                href: datavis_geovis.qmd
+              - text: Previous Work
+                href: datavis_prev_assignment1.qmd
+    - id: datacollect
+      title: "Data Collection Assignments"
+      contents:
+              - text: Assignment 1
+                href: datacollect_assignment1.qmd
+              - text: Assignment 2
+                href: datacollect_assignment2.qmd
+              - text: Assignment 3
+                href: datacollect_assignment3.qmd
+              - text: Assignment 4
+                href: datacollect_assignment4.qmd
+              - text: Assignment 5
+                href: datacollect_assignment5.qmd
+              - text: Assignment 6
+                href: datacollect_assignment6.qmd
 format:
   html:
     theme: cosmo
