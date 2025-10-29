@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Assignment2 – Changho’s page</title>
+<title>Assignment5 – Changho’s page</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -159,7 +159,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./datacollect_assignment2.html">Assignment 2</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./datacollect_assignment5.html">Assignment 5</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -179,7 +179,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./datacollect_assignment2.html" class="sidebar-item-text sidebar-link active">
+  <a href="./datacollect_assignment2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Assignment 2</span></a>
   </div>
 </li>
@@ -197,7 +197,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./datacollect_assignment5.html" class="sidebar-item-text sidebar-link">
+  <a href="./datacollect_assignment5.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Assignment 5</span></a>
   </div>
 </li>
@@ -220,7 +220,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Assignment2</h1>
+<h1 class="title">Assignment5</h1>
 </div>
 
 
@@ -237,108 +237,146 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<ol type="a">
+<li><strong>Download ten most recent documents.</strong></li>
+</ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>gtrend_fromWEb <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"multiTimeline.csv"</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(gtrend_fromWEb,<span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Scraping Government data</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Website: GovInfo (https://www.govinfo.gov/app/search/)</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Prerequisite: Download from website the list of files to be downloaded</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Designed for background job</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Start with a clean plate and lean loading to save memory</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">gc</span>(<span class="at">reset=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>         Time trump.kamala.harris.election
-241 4/27/2025                           &lt;1
-242  5/4/2025                           &lt;1
-243 5/11/2025                            0
-244 5/18/2025                           &lt;1
-245 5/25/2025                           &lt;1
-246  6/1/2025                           &lt;1
-247  6/8/2025                           &lt;1
-248 6/15/2025                           &lt;1
-249 6/22/2025                           &lt;1
-250 6/29/2025                           &lt;1
-251  7/6/2025                           &lt;1
-252 7/13/2025                           &lt;1
-253 7/20/2025                           &lt;1
-254 7/27/2025                           &lt;1
-255  8/3/2025                           &lt;1
-256 8/10/2025                           &lt;1
-257 8/17/2025                           &lt;1
-258 8/24/2025                           &lt;1
-259 8/31/2025                            0
-260  9/7/2025                           &lt;1</code></pre>
+<pre><code>          used (Mb) gc trigger (Mb) max used (Mb)
+Ncells  603791 32.3    1374085 73.4   603791 32.3
+Vcells 1097122  8.4    8388608 64.0  1097122  8.4</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages(c("purrr", "magrittr")</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(purrr)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr) <span class="co"># Alternatively, load tidyverse</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'magrittr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:purrr':
+
+    set_names</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Set path for reading the listing and home directory</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="do">## For Windows, use "c:\\directory\\subdirectory\\"</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="do">## For Mac, "/Users/YOURNAME/path/"</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rjson)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(jsonlite)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'jsonlite'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:rjson':
+
+    fromJSON, toJSON</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:purrr':
+
+    flatten</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(data.table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'data.table'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:purrr':
+
+    transpose</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="do">### jsonlite</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>gf_list1 <span class="ot">=</span> jsonlite<span class="sc">::</span><span class="fu">read_json</span>(<span class="st">"https://github.com/datageneration/datamethods/raw/refs/heads/master/webdata/govinfo-search-results-2024-10-13T07_18_29.json"</span>)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="do">### Extract the list</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>govfiles3 <span class="ot">&lt;-</span> gf_list1<span class="sc">$</span>resultSet</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="do">### One more step</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>govfiles3 <span class="ot">&lt;-</span> gf_list1<span class="sc">$</span>resultSet <span class="sc">|&gt;</span> dplyr<span class="sc">::</span><span class="fu">bind_rows</span>()</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Preparing for bulk download of government documents</span></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>pdf_govfiles_url <span class="ot">=</span> govfiles3<span class="sc">$</span>pdfLink</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>pdf_govfiles_id <span class="ot">&lt;-</span> govfiles3<span class="sc">$</span>index</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Directory to save the pdf's</span></span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Be sure to create a folder for storing the pdf's</span></span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>save_dir <span class="ot">&lt;-</span> <span class="st">"D:/downloads"</span></span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to download pdfs</span></span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>download_govfiles_pdf <span class="ot">&lt;-</span> <span class="cf">function</span>(url, id) {</span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tryCatch</span>({</span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>    destfile <span class="ot">&lt;-</span> <span class="fu">paste0</span>(save_dir, <span class="st">"govfiles_"</span>, id, <span class="st">".pdf"</span>)</span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">download.file</span>(url, <span class="at">destfile =</span> destfile, <span class="at">mode =</span> <span class="st">"wb"</span>) <span class="co"># Binary files</span></span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">Sys.sleep</span>(<span class="fu">runif</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">3</span>))  <span class="co"># Important: random sleep between 1 and 3 seconds to avoid suspicion of "hacking" the server</span></span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">paste</span>(<span class="st">"Successfully downloaded:"</span>, url))</span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a>  },</span>
+<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a>  <span class="at">error =</span> <span class="cf">function</span>(e) {</span>
+<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">paste</span>(<span class="st">"Failed to download:"</span>, url))</span>
+<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-34"><a href="#cb13-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Download files, potentially in parallel for speed</span></span>
+<span id="cb13-35"><a href="#cb13-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Simple timer, can use package like tictoc</span></span>
+<span id="cb13-36"><a href="#cb13-36" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb13-37"><a href="#cb13-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-38"><a href="#cb13-38" aria-hidden="true" tabindex="-1"></a><span class="do">## Try Ten</span></span>
+<span id="cb13-39"><a href="#cb13-39" aria-hidden="true" tabindex="-1"></a>start.time <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb13-40"><a href="#cb13-40" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span>(<span class="st">"Starting downloads"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Starting downloads</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span> <span class="sc">%&gt;%</span> </span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  purrr<span class="sc">::</span><span class="fu">map_chr</span>(<span class="sc">~</span> <span class="fu">download_govfiles_pdf</span>(pdf_govfiles_url[.], pdf_govfiles_id[.]))</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span>(<span class="st">"Finished downloads"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Finished downloads</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>end.time <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>time.taken <span class="ot">&lt;-</span> end.time <span class="sc">-</span> start.time</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>time.taken</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Time difference of 23.45076 secs</code></pre>
 </div>
 </div>
+<p><strong>Write simple report on difficulties encountered in the scraping process.</strong></p>
+<p><strong>How useable the scraped data?</strong></p>
+<p><strong>How to improve?</strong></p>
+<p><strong>Report on Web Scraping Process</strong></p>
+<ol type="1">
+<li>Difficulties Encountered During the web scraping process, several challenges were observed.</li>
+</ol>
 <ul>
-<li><p><strong>Dates</strong>: from Sep 20, 2020 to Sep 7, 2025</p></li>
-<li><p><strong>Interval</strong>: a week</p></li>
+<li><p>Dynamic web pages: Some websites, such as Investing.com, load data dynamically using JavaScript, which makes it difficult to extract the information directly from the HTML source.</p></li>
+<li><p>Frequent website structure changes: The layout and HTML tags of the website may change without notice, breaking the scraping code.</p></li>
+<li><p>Access restrictions: Some websites block automated requests or limit access through CAPTCHA and rate-limiting systems.</p></li>
+<li><p>Data inconsistency: Extracted tables often contain merged cells, missing values, or symbols (e.g., commas, currency signs) that require cleaning before analysis.</p></li>
 </ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>gtrend_fromR <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"googletrend_R.csv"</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gtrend_fromR,<span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>   interest_over_time.date interest_over_time.hits interest_over_time.keyword
-1               2020-09-20                       2                      Trump
-2               2020-09-27                       6                      Trump
-3               2020-10-04                       5                      Trump
-4               2020-10-11                       3                      Trump
-5               2020-10-18                       3                      Trump
-6               2020-10-25                       3                      Trump
-7               2020-11-01                       9                      Trump
-8               2020-11-08                       5                      Trump
-9               2020-11-15                       3                      Trump
-10              2020-11-22                       2                      Trump
-11              2020-11-29                       2                      Trump
-12              2020-12-06                       2                      Trump
-13              2020-12-13                       2                      Trump
-14              2020-12-20                       2                      Trump
-15              2020-12-27                       2                      Trump
-16              2021-01-03                       5                      Trump
-17              2021-01-10                       4                      Trump
-18              2021-01-17                       4                      Trump
-19              2021-01-24                       1                      Trump
-20              2021-01-31                       1                      Trump
-   interest_over_time.geo interest_over_time.time interest_over_time.gprop
-1                      US   2020-09-20 2025-09-07                      web
-2                      US   2020-09-20 2025-09-07                      web
-3                      US   2020-09-20 2025-09-07                      web
-4                      US   2020-09-20 2025-09-07                      web
-5                      US   2020-09-20 2025-09-07                      web
-6                      US   2020-09-20 2025-09-07                      web
-7                      US   2020-09-20 2025-09-07                      web
-8                      US   2020-09-20 2025-09-07                      web
-9                      US   2020-09-20 2025-09-07                      web
-10                     US   2020-09-20 2025-09-07                      web
-11                     US   2020-09-20 2025-09-07                      web
-12                     US   2020-09-20 2025-09-07                      web
-13                     US   2020-09-20 2025-09-07                      web
-14                     US   2020-09-20 2025-09-07                      web
-15                     US   2020-09-20 2025-09-07                      web
-16                     US   2020-09-20 2025-09-07                      web
-17                     US   2020-09-20 2025-09-07                      web
-18                     US   2020-09-20 2025-09-07                      web
-19                     US   2020-09-20 2025-09-07                      web
-20                     US   2020-09-20 2025-09-07                      web
-   interest_over_time.category
-1                            0
-2                            0
-3                            0
-4                            0
-5                            0
-6                            0
-7                            0
-8                            0
-9                            0
-10                           0
-11                           0
-12                           0
-13                           0
-14                           0
-15                           0
-16                           0
-17                           0
-18                           0
-19                           0
-20                           0</code></pre>
-</div>
-</div>
-<p><strong>What are differences between the two methods?</strong></p>
-<p>Table schemes are different. For web version, data are organized into wide form which displays keywords at columns. However, for R version, data structure is long form which displays the statistics are recorded in <code>hits</code> column and <code>keyword</code> column contains information related to the statistics.</p>
+<ol start="2" type="1">
+<li><p>Usability of the Scraped Data</p>
+<p>The scraped data is partially usable. While it provides valuable information such as financial statements and market indicators, it often needs to be cleaned and standardized. Some records may be incomplete or misaligned due to inconsistent HTML formatting. Therefore, preprocessing (e.g., removing symbols, converting data types, handling missing values) is necessary before conducting statistical or economic analysis.</p></li>
+<li><p>Suggestions for Improvement</p></li>
+</ol>
+<ul>
+<li><p>Use APIs when available: Instead of scraping, official APIs (if provided) are more stable and reliable.</p></li>
+<li><p>Automate error handling: Add exception handling and logging to identify failed scrapes or changed page structures quickly.</p></li>
+<li><p>Schedule regular updates: Automate periodic scraping to maintain an up-to-date dataset.</p></li>
+<li><p>Apply data validation: Implement scripts to check the accuracy and completeness of extracted values.</p></li>
+<li><p>Use advanced tools: Employ libraries like Selenium (for dynamic content) or BeautifulSoup combined with requests in Python for more flexible scraping and parsing.</p></li>
+</ul>
 
 
 

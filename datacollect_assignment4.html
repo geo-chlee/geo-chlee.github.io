@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Assignment2 – Changho’s page</title>
+<title>Assignment4 – Changho’s page</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,41 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -159,7 +124,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./datacollect_assignment2.html">Assignment 2</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./datacollect_assignment4.html">Assignment 4</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -179,7 +144,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./datacollect_assignment2.html" class="sidebar-item-text sidebar-link active">
+  <a href="./datacollect_assignment2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Assignment 2</span></a>
   </div>
 </li>
@@ -191,7 +156,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./datacollect_assignment4.html" class="sidebar-item-text sidebar-link">
+  <a href="./datacollect_assignment4.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Assignment 4</span></a>
   </div>
 </li>
@@ -220,7 +185,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Assignment2</h1>
+<h1 class="title">Assignment4</h1>
 </div>
 
 
@@ -237,108 +202,496 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<p><strong>a) For modifying the program to scrape other tables in Wikipedia,</strong> I chose another table of the <em>Currency composition of foreign exchange reserves</em>.</p>
+<p><strong>b) For cleaning up the data frame,</strong> I set new header and remove unnecessary columns and rows</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>gtrend_fromWEb <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"multiTimeline.csv"</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(gtrend_fromWEb,<span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.5.2     ✔ tibble    3.3.0
+✔ lubridate 1.9.4     ✔ tidyr     1.3.1
+✔ purrr     1.1.0     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors
+
+Attaching package: 'rvest'
+
+
+The following object is masked from 'package:readr':
+
+    guess_encoding</code></pre>
+</div>
 <div class="cell-output cell-output-stdout">
-<pre><code>         Time trump.kamala.harris.election
-241 4/27/2025                           &lt;1
-242  5/4/2025                           &lt;1
-243 5/11/2025                            0
-244 5/18/2025                           &lt;1
-245 5/25/2025                           &lt;1
-246  6/1/2025                           &lt;1
-247  6/8/2025                           &lt;1
-248 6/15/2025                           &lt;1
-249 6/22/2025                           &lt;1
-250 6/29/2025                           &lt;1
-251  7/6/2025                           &lt;1
-252 7/13/2025                           &lt;1
-253 7/20/2025                           &lt;1
-254 7/27/2025                           &lt;1
-255  8/3/2025                           &lt;1
-256 8/10/2025                           &lt;1
-257 8/17/2025                           &lt;1
-258 8/24/2025                           &lt;1
-259 8/31/2025                            0
-260  9/7/2025                           &lt;1</code></pre>
+<pre><code>[1] "xml_document" "xml_node"    </code></pre>
 </div>
-</div>
-<ul>
-<li><p><strong>Dates</strong>: from Sep 20, 2020 to Sep 7, 2025</p></li>
-<li><p><strong>Interval</strong>: a week</p></li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>gtrend_fromR <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"googletrend_R.csv"</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gtrend_fromR,<span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>   interest_over_time.date interest_over_time.hits interest_over_time.keyword
-1               2020-09-20                       2                      Trump
-2               2020-09-27                       6                      Trump
-3               2020-10-04                       5                      Trump
-4               2020-10-11                       3                      Trump
-5               2020-10-18                       3                      Trump
-6               2020-10-25                       3                      Trump
-7               2020-11-01                       9                      Trump
-8               2020-11-08                       5                      Trump
-9               2020-11-15                       3                      Trump
-10              2020-11-22                       2                      Trump
-11              2020-11-29                       2                      Trump
-12              2020-12-06                       2                      Trump
-13              2020-12-13                       2                      Trump
-14              2020-12-20                       2                      Trump
-15              2020-12-27                       2                      Trump
-16              2021-01-03                       5                      Trump
-17              2021-01-10                       4                      Trump
-18              2021-01-17                       4                      Trump
-19              2021-01-24                       1                      Trump
-20              2021-01-31                       1                      Trump
-   interest_over_time.geo interest_over_time.time interest_over_time.gprop
-1                      US   2020-09-20 2025-09-07                      web
-2                      US   2020-09-20 2025-09-07                      web
-3                      US   2020-09-20 2025-09-07                      web
-4                      US   2020-09-20 2025-09-07                      web
-5                      US   2020-09-20 2025-09-07                      web
-6                      US   2020-09-20 2025-09-07                      web
-7                      US   2020-09-20 2025-09-07                      web
-8                      US   2020-09-20 2025-09-07                      web
-9                      US   2020-09-20 2025-09-07                      web
-10                     US   2020-09-20 2025-09-07                      web
-11                     US   2020-09-20 2025-09-07                      web
-12                     US   2020-09-20 2025-09-07                      web
-13                     US   2020-09-20 2025-09-07                      web
-14                     US   2020-09-20 2025-09-07                      web
-15                     US   2020-09-20 2025-09-07                      web
-16                     US   2020-09-20 2025-09-07                      web
-17                     US   2020-09-20 2025-09-07                      web
-18                     US   2020-09-20 2025-09-07                      web
-19                     US   2020-09-20 2025-09-07                      web
-20                     US   2020-09-20 2025-09-07                      web
-   interest_over_time.category
-1                            0
-2                            0
-3                            0
-4                            0
-5                            0
-6                            0
-7                            0
-8                            0
-9                            0
-10                           0
-11                           0
-12                           0
-13                           0
-14                           0
-15                           0
-16                           0
-17                           0
-18                           0
-19                           0
-20                           0</code></pre>
+<pre><code>[1] "list"</code></pre>
+</div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Currency composition of foreign exchange reserves (COFER) (billion U.S$.)</caption>
+<colgroup>
+<col style="width: 4%">
+<col style="width: 6%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 13%">
+<col style="width: 16%">
+<col style="width: 8%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Year</th>
+<th style="text-align: right;">Quarter</th>
+<th style="text-align: right;">USD</th>
+<th style="text-align: right;">EUR</th>
+<th style="text-align: right;">JPY</th>
+<th style="text-align: right;">GBP</th>
+<th style="text-align: right;">CAD</th>
+<th style="text-align: right;">CNY</th>
+<th style="text-align: right;">AUD</th>
+<th style="text-align: right;">CHF</th>
+<th style="text-align: right;">Othercurrencies</th>
+<th style="text-align: right;">Unallocatedreserves</th>
+<th style="text-align: right;">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">2019</td>
+<td style="text-align: right;">Q1</td>
+<td style="text-align: right;">6,727.09</td>
+<td style="text-align: right;">2,208.79</td>
+<td style="text-align: right;">584.63</td>
+<td style="text-align: right;">495.70</td>
+<td style="text-align: right;">208.64</td>
+<td style="text-align: right;">212.26</td>
+<td style="text-align: right;">181.95</td>
+<td style="text-align: right;">15.27</td>
+<td style="text-align: right;">263.50</td>
+<td style="text-align: right;">712.93</td>
+<td style="text-align: right;">11,610.77</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2019</td>
+<td style="text-align: right;">Q2</td>
+<td style="text-align: right;">6,752.28</td>
+<td style="text-align: right;">2,264.88</td>
+<td style="text-align: right;">611.87</td>
+<td style="text-align: right;">497.41</td>
+<td style="text-align: right;">209.85</td>
+<td style="text-align: right;">212.80</td>
+<td style="text-align: right;">186.71</td>
+<td style="text-align: right;">15.53</td>
+<td style="text-align: right;">270.56</td>
+<td style="text-align: right;">715.88</td>
+<td style="text-align: right;">11,737.76</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2019</td>
+<td style="text-align: right;">Q3</td>
+<td style="text-align: right;">6,728.85</td>
+<td style="text-align: right;">2,212.74</td>
+<td style="text-align: right;">612.75</td>
+<td style="text-align: right;">492.22</td>
+<td style="text-align: right;">205.44</td>
+<td style="text-align: right;">213.83</td>
+<td style="text-align: right;">182.48</td>
+<td style="text-align: right;">16.20</td>
+<td style="text-align: right;">262.92</td>
+<td style="text-align: right;">729.40</td>
+<td style="text-align: right;">11,656.82</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2019</td>
+<td style="text-align: right;">Q4</td>
+<td style="text-align: right;">6,674.83</td>
+<td style="text-align: right;">2,279.30</td>
+<td style="text-align: right;">631.00</td>
+<td style="text-align: right;">511.51</td>
+<td style="text-align: right;">206.71</td>
+<td style="text-align: right;">215.81</td>
+<td style="text-align: right;">187.18</td>
+<td style="text-align: right;">17.36</td>
+<td style="text-align: right;">281.50</td>
+<td style="text-align: right;">749.55</td>
+<td style="text-align: right;">11,824.74</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2020</td>
+<td style="text-align: right;">Q1</td>
+<td style="text-align: right;">6,794.91</td>
+<td style="text-align: right;">2,197.30</td>
+<td style="text-align: right;">624.97</td>
+<td style="text-align: right;">486.08</td>
+<td style="text-align: right;">195.13</td>
+<td style="text-align: right;">221.48</td>
+<td style="text-align: right;">170.16</td>
+<td style="text-align: right;">16.05</td>
+<td style="text-align: right;">255.53</td>
+<td style="text-align: right;">770.32</td>
+<td style="text-align: right;">11,731.94</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2020</td>
+<td style="text-align: right;">Q2</td>
+<td style="text-align: right;">6,902.01</td>
+<td style="text-align: right;">2,272.44</td>
+<td style="text-align: right;">643.70</td>
+<td style="text-align: right;">504.36</td>
+<td style="text-align: right;">215.47</td>
+<td style="text-align: right;">233.68</td>
+<td style="text-align: right;">190.34</td>
+<td style="text-align: right;">17.22</td>
+<td style="text-align: right;">278.67</td>
+<td style="text-align: right;">754.11</td>
+<td style="text-align: right;">12,011.98</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2020</td>
+<td style="text-align: right;">Q3</td>
+<td style="text-align: right;">6,927.16</td>
+<td style="text-align: right;">2,359.61</td>
+<td style="text-align: right;">668.19</td>
+<td style="text-align: right;">523.64</td>
+<td style="text-align: right;">231.10</td>
+<td style="text-align: right;">247.44</td>
+<td style="text-align: right;">199.51</td>
+<td style="text-align: right;">19.30</td>
+<td style="text-align: right;">283.16</td>
+<td style="text-align: right;">787.44</td>
+<td style="text-align: right;">12,246.56</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2020</td>
+<td style="text-align: right;">Q4</td>
+<td style="text-align: right;">6,990.97</td>
+<td style="text-align: right;">2,526.41</td>
+<td style="text-align: right;">715.35</td>
+<td style="text-align: right;">561.39</td>
+<td style="text-align: right;">246.57</td>
+<td style="text-align: right;">271.60</td>
+<td style="text-align: right;">216.87</td>
+<td style="text-align: right;">20.74</td>
+<td style="text-align: right;">314.63</td>
+<td style="text-align: right;">841.14</td>
+<td style="text-align: right;">12,705.67</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2021</td>
+<td style="text-align: right;">Q1</td>
+<td style="text-align: right;">6,971.79</td>
+<td style="text-align: right;">2,404.80</td>
+<td style="text-align: right;">686.30</td>
+<td style="text-align: right;">554.28</td>
+<td style="text-align: right;">250.01</td>
+<td style="text-align: right;">293.32</td>
+<td style="text-align: right;">214.89</td>
+<td style="text-align: right;">19.44</td>
+<td style="text-align: right;">335.82</td>
+<td style="text-align: right;">851.50</td>
+<td style="text-align: right;">12,582.14</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2021</td>
+<td style="text-align: right;">Q2</td>
+<td style="text-align: right;">7,070.33</td>
+<td style="text-align: right;">2,458.88</td>
+<td style="text-align: right;">672.20</td>
+<td style="text-align: right;">560.90</td>
+<td style="text-align: right;">270.01</td>
+<td style="text-align: right;">314.81</td>
+<td style="text-align: right;">218.44</td>
+<td style="text-align: right;">23.13</td>
+<td style="text-align: right;">357.57</td>
+<td style="text-align: right;">865.83</td>
+<td style="text-align: right;">12,812.12</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2021</td>
+<td style="text-align: right;">Q3</td>
+<td style="text-align: right;">7,087.77</td>
+<td style="text-align: right;">2,462.44</td>
+<td style="text-align: right;">681.42</td>
+<td style="text-align: right;">561.66</td>
+<td style="text-align: right;">264.29</td>
+<td style="text-align: right;">320.15</td>
+<td style="text-align: right;">214.26</td>
+<td style="text-align: right;">23.77</td>
+<td style="text-align: right;">354.77</td>
+<td style="text-align: right;">860.67</td>
+<td style="text-align: right;">12,831.20</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2021</td>
+<td style="text-align: right;">Q4</td>
+<td style="text-align: right;">7,087.14</td>
+<td style="text-align: right;">2,486.88</td>
+<td style="text-align: right;">671.77</td>
+<td style="text-align: right;">576.22</td>
+<td style="text-align: right;">286.93</td>
+<td style="text-align: right;">336.10</td>
+<td style="text-align: right;">218.02</td>
+<td style="text-align: right;">24.51</td>
+<td style="text-align: right;">362.96</td>
+<td style="text-align: right;">886.73</td>
+<td style="text-align: right;">12,937.27</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">Q1</td>
+<td style="text-align: right;">6,868.97</td>
+<td style="text-align: right;">2,328.35</td>
+<td style="text-align: right;">626.44</td>
+<td style="text-align: right;">569.45</td>
+<td style="text-align: right;">286.02</td>
+<td style="text-align: right;">330.03</td>
+<td style="text-align: right;">221.91</td>
+<td style="text-align: right;">29.48</td>
+<td style="text-align: right;">387.80</td>
+<td style="text-align: right;">858.65</td>
+<td style="text-align: right;">12,507.09</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">Q2</td>
+<td style="text-align: right;">6,645.02</td>
+<td style="text-align: right;">2,187.63</td>
+<td style="text-align: right;">572.65</td>
+<td style="text-align: right;">538.73</td>
+<td style="text-align: right;">275.75</td>
+<td style="text-align: right;">308.22</td>
+<td style="text-align: right;">209.14</td>
+<td style="text-align: right;">27.63</td>
+<td style="text-align: right;">358.62</td>
+<td style="text-align: right;">858.26</td>
+<td style="text-align: right;">11,981.65</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">Q3</td>
+<td style="text-align: right;">6,426.89</td>
+<td style="text-align: right;">2,086.40</td>
+<td style="text-align: right;">560.11</td>
+<td style="text-align: right;">489.95</td>
+<td style="text-align: right;">260.92</td>
+<td style="text-align: right;">281.12</td>
+<td style="text-align: right;">204.78</td>
+<td style="text-align: right;">24.78</td>
+<td style="text-align: right;">358.59</td>
+<td style="text-align: right;">841.74</td>
+<td style="text-align: right;">11,535.29</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">Q4</td>
+<td style="text-align: right;">6,460.21</td>
+<td style="text-align: right;">2,252.06</td>
+<td style="text-align: right;">608.17</td>
+<td style="text-align: right;">543.11</td>
+<td style="text-align: right;">262.62</td>
+<td style="text-align: right;">287.81</td>
+<td style="text-align: right;">217.08</td>
+<td style="text-align: right;">25.31</td>
+<td style="text-align: right;">383.64</td>
+<td style="text-align: right;">877.79</td>
+<td style="text-align: right;">11,917.81</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2023</td>
+<td style="text-align: right;">Q1</td>
+<td style="text-align: right;">6,630.89</td>
+<td style="text-align: right;">2,186.33</td>
+<td style="text-align: right;">610.39</td>
+<td style="text-align: right;">605.02</td>
+<td style="text-align: right;">270.60</td>
+<td style="text-align: right;">287.12</td>
+<td style="text-align: right;">221.62</td>
+<td style="text-align: right;">28.26</td>
+<td style="text-align: right;">389.07</td>
+<td style="text-align: right;">877.53</td>
+<td style="text-align: right;">12,029.03</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2023</td>
+<td style="text-align: right;">Q2</td>
+<td style="text-align: right;">6,641.89</td>
+<td style="text-align: right;">2,207.25</td>
+<td style="text-align: right;">597.15</td>
+<td style="text-align: right;">533.64</td>
+<td style="text-align: right;">278.51</td>
+<td style="text-align: right;">272.99</td>
+<td style="text-align: right;">219.70</td>
+<td style="text-align: right;">21.26</td>
+<td style="text-align: right;">403.72</td>
+<td style="text-align: right;">887.06</td>
+<td style="text-align: right;">12,055.26</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2023</td>
+<td style="text-align: right;">Q3</td>
+<td style="text-align: right;">6,497.94</td>
+<td style="text-align: right;">2,150.47</td>
+<td style="text-align: right;">598.73</td>
+<td style="text-align: right;">530.36</td>
+<td style="text-align: right;">274.36</td>
+<td style="text-align: right;">260.12</td>
+<td style="text-align: right;">222.35</td>
+<td style="text-align: right;">20.30</td>
+<td style="text-align: right;">426.63</td>
+<td style="text-align: right;">920.27</td>
+<td style="text-align: right;">11,901.53</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2023</td>
+<td style="text-align: right;">Q4</td>
+<td style="text-align: right;">6,687.11</td>
+<td style="text-align: right;">2,287.57</td>
+<td style="text-align: right;">652.90</td>
+<td style="text-align: right;">553.91</td>
+<td style="text-align: right;">295.25</td>
+<td style="text-align: right;">261.73</td>
+<td style="text-align: right;">241.78</td>
+<td style="text-align: right;">26.38</td>
+<td style="text-align: right;">442.77</td>
+<td style="text-align: right;">883.06</td>
+<td style="text-align: right;">12,332.46</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2024</td>
+<td style="text-align: right;">Q1</td>
+<td style="text-align: right;">6,774.82</td>
+<td style="text-align: right;">2,253.79</td>
+<td style="text-align: right;">654.52</td>
+<td style="text-align: right;">562.48</td>
+<td style="text-align: right;">295.64</td>
+<td style="text-align: right;">247.10</td>
+<td style="text-align: right;">248.42</td>
+<td style="text-align: right;">21.93</td>
+<td style="text-align: right;">439.56</td>
+<td style="text-align: right;">885.35</td>
+<td style="text-align: right;">12,383.61</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2024</td>
+<td style="text-align: right;">Q2</td>
+<td style="text-align: right;">6,675.82</td>
+<td style="text-align: right;">2,265.29</td>
+<td style="text-align: right;">641.07</td>
+<td style="text-align: right;">565.92</td>
+<td style="text-align: right;">306.85</td>
+<td style="text-align: right;">245.17</td>
+<td style="text-align: right;">256.45</td>
+<td style="text-align: right;">22.43</td>
+<td style="text-align: right;">486.89</td>
+<td style="text-align: right;">881.90</td>
+<td style="text-align: right;">12,347.42</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2024</td>
+<td style="text-align: right;">Q3</td>
+<td style="text-align: right;">6,786.40</td>
+<td style="text-align: right;">2,372.30</td>
+<td style="text-align: right;">690.00</td>
+<td style="text-align: right;">589.70</td>
+<td style="text-align: right;">324.40</td>
+<td style="text-align: right;">257.80</td>
+<td style="text-align: right;">268.70</td>
+<td style="text-align: right;">19.80</td>
+<td style="text-align: right;">534.70</td>
+<td style="text-align: right;">905.90</td>
+<td style="text-align: right;">12,750.11</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2024</td>
+<td style="text-align: right;">Q4</td>
+<td style="text-align: right;">6,631.30</td>
+<td style="text-align: right;">2,275.90</td>
+<td style="text-align: right;">667.10</td>
+<td style="text-align: right;">542.40</td>
+<td style="text-align: right;">317.90</td>
+<td style="text-align: right;">249.60</td>
+<td style="text-align: right;">235.90</td>
+<td style="text-align: right;">19.70</td>
+<td style="text-align: right;">532.80</td>
+<td style="text-align: right;">892.10</td>
+<td style="text-align: right;">12,364.11</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2025</td>
+<td style="text-align: right;">Q1</td>
+<td style="text-align: right;">6,720.31</td>
+<td style="text-align: right;">2,334.61</td>
+<td style="text-align: right;">599.09</td>
+<td style="text-align: right;">603.70</td>
+<td style="text-align: right;">306.13</td>
+<td style="text-align: right;">246.31</td>
+<td style="text-align: right;">235.27</td>
+<td style="text-align: right;">20.85</td>
+<td style="text-align: right;">573.41</td>
+<td style="text-align: right;">898.61</td>
+<td style="text-align: right;">11,639.72</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2025</td>
+<td style="text-align: right;">Q2</td>
+<td style="text-align: right;">6,773.33</td>
+<td style="text-align: right;">2,540.42</td>
+<td style="text-align: right;">670.07</td>
+<td style="text-align: right;">580.23</td>
+<td style="text-align: right;">313.82</td>
+<td style="text-align: right;">255.37</td>
+<td style="text-align: right;">250.93</td>
+<td style="text-align: right;">19.54</td>
+<td style="text-align: right;">621.70</td>
+<td style="text-align: right;">919.30</td>
+<td style="text-align: right;">12,944.76</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2025</td>
+<td style="text-align: right;">Q3</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2025</td>
+<td style="text-align: right;">Q4</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
-<p><strong>What are differences between the two methods?</strong></p>
-<p>Table schemes are different. For web version, data are organized into wide form which displays keywords at columns. However, for R version, data structure is long form which displays the statistics are recorded in <code>hits</code> column and <code>keyword</code> column contains information related to the statistics.</p>
+<p><strong>c) Suggest a data plan to acquire web data for research.</strong></p>
+<p>Most data owners prefer to share their data by displaying it on their websites rather than providing direct access to their databases. Because their databases are not publicly available, researchers often need to collect the data manually using web scraping techniques. For example, in the case of Investing.com, we can obtain financial statements of numerous companies through web scraping.</p>
 
 
 

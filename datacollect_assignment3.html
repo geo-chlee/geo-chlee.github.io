@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Assignment2 – Changho’s page</title>
+<title>Assignment3 – Changho’s page</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -159,7 +159,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./datacollect_assignment2.html">Assignment 2</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./datacollect_assignment3.html">Assignment 3</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -179,13 +179,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./datacollect_assignment2.html" class="sidebar-item-text sidebar-link active">
+  <a href="./datacollect_assignment2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Assignment 2</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./datacollect_assignment3.html" class="sidebar-item-text sidebar-link">
+  <a href="./datacollect_assignment3.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Assignment 3</span></a>
   </div>
 </li>
@@ -220,7 +220,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Assignment2</h1>
+<h1 class="title">Assignment3</h1>
 </div>
 
 
@@ -237,108 +237,347 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<p><strong>1) Get data</strong></p>
+<p>Geography: Texas, Collin County, Unit: Census tracts, Variables: Total population and Population speaking only English</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>gtrend_fromWEb <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"multiTimeline.csv"</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(gtrend_fromWEb,<span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>         Time trump.kamala.harris.election
-241 4/27/2025                           &lt;1
-242  5/4/2025                           &lt;1
-243 5/11/2025                            0
-244 5/18/2025                           &lt;1
-245 5/25/2025                           &lt;1
-246  6/1/2025                           &lt;1
-247  6/8/2025                           &lt;1
-248 6/15/2025                           &lt;1
-249 6/22/2025                           &lt;1
-250 6/29/2025                           &lt;1
-251  7/6/2025                           &lt;1
-252 7/13/2025                           &lt;1
-253 7/20/2025                           &lt;1
-254 7/27/2025                           &lt;1
-255  8/3/2025                           &lt;1
-256 8/10/2025                           &lt;1
-257 8/17/2025                           &lt;1
-258 8/24/2025                           &lt;1
-259 8/31/2025                            0
-260  9/7/2025                           &lt;1</code></pre>
+<div class="cell-output cell-output-stderr">
+<pre><code>To enable caching of data, set `options(tigris_use_cache = TRUE)`
+in your R script or .Rprofile.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Linking to GEOS 3.13.1, GDAL 3.11.0, PROJ 9.6.0; sf_use_s2() is TRUE</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'dplyr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:stats':
+
+    filter, lag</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Getting data from the 2019-2023 5-year ACS</code></pre>
 </div>
 </div>
-<ul>
-<li><p><strong>Dates</strong>: from Sep 20, 2020 to Sep 7, 2025</p></li>
-<li><p><strong>Interval</strong>: a week</p></li>
-</ul>
+<p><strong>2) Plot map</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>gtrend_fromR <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"googletrend_R.csv"</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gtrend_fromR,<span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>   interest_over_time.date interest_over_time.hits interest_over_time.keyword
-1               2020-09-20                       2                      Trump
-2               2020-09-27                       6                      Trump
-3               2020-10-04                       5                      Trump
-4               2020-10-11                       3                      Trump
-5               2020-10-18                       3                      Trump
-6               2020-10-25                       3                      Trump
-7               2020-11-01                       9                      Trump
-8               2020-11-08                       5                      Trump
-9               2020-11-15                       3                      Trump
-10              2020-11-22                       2                      Trump
-11              2020-11-29                       2                      Trump
-12              2020-12-06                       2                      Trump
-13              2020-12-13                       2                      Trump
-14              2020-12-20                       2                      Trump
-15              2020-12-27                       2                      Trump
-16              2021-01-03                       5                      Trump
-17              2021-01-10                       4                      Trump
-18              2021-01-17                       4                      Trump
-19              2021-01-24                       1                      Trump
-20              2021-01-31                       1                      Trump
-   interest_over_time.geo interest_over_time.time interest_over_time.gprop
-1                      US   2020-09-20 2025-09-07                      web
-2                      US   2020-09-20 2025-09-07                      web
-3                      US   2020-09-20 2025-09-07                      web
-4                      US   2020-09-20 2025-09-07                      web
-5                      US   2020-09-20 2025-09-07                      web
-6                      US   2020-09-20 2025-09-07                      web
-7                      US   2020-09-20 2025-09-07                      web
-8                      US   2020-09-20 2025-09-07                      web
-9                      US   2020-09-20 2025-09-07                      web
-10                     US   2020-09-20 2025-09-07                      web
-11                     US   2020-09-20 2025-09-07                      web
-12                     US   2020-09-20 2025-09-07                      web
-13                     US   2020-09-20 2025-09-07                      web
-14                     US   2020-09-20 2025-09-07                      web
-15                     US   2020-09-20 2025-09-07                      web
-16                     US   2020-09-20 2025-09-07                      web
-17                     US   2020-09-20 2025-09-07                      web
-18                     US   2020-09-20 2025-09-07                      web
-19                     US   2020-09-20 2025-09-07                      web
-20                     US   2020-09-20 2025-09-07                      web
-   interest_over_time.category
-1                            0
-2                            0
-3                            0
-4                            0
-5                            0
-6                            0
-7                            0
-8                            0
-9                            0
-10                           0
-11                           0
-12                           0
-13                           0
-14                           0
-15                           0
-16                           0
-17                           0
-18                           0
-19                           0
-20                           0</code></pre>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>acs_bg_vars<span class="sc">$</span>popden<span class="ot">&lt;-</span>acs_bg_vars<span class="sc">$</span>total_pop<span class="sc">/</span>acs_bg_vars<span class="sc">$</span>ALAND</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>acs_bg_vars<span class="sc">$</span>rate_eng<span class="ot">&lt;-</span>acs_bg_vars<span class="sc">$</span>SpkEng<span class="sc">/</span>acs_bg_vars<span class="sc">$</span>total_pop</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(acs_bg_vars[<span class="st">"popden"</span>],<span class="at">main=</span><span class="st">"Population Density (persons/sq.m) in Collin CO, TX"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="datacollect_assignment3_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
 </div>
 </div>
-<p><strong>What are differences between the two methods?</strong></p>
-<p>Table schemes are different. For web version, data are organized into wide form which displays keywords at columns. However, for R version, data structure is long form which displays the statistics are recorded in <code>hits</code> column and <code>keyword</code> column contains information related to the statistics.</p>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(acs_bg_vars[<span class="st">"rate_eng"</span>],<span class="at">main=</span><span class="st">"The rate of population speaking only English in Collin"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="datacollect_assignment3_files/figure-html/unnamed-chunk-2-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>3) Show Table</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">st_drop_geometry</span>(acs_bg_vars[<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,(<span class="fu">nrow</span>(acs_bg_vars)<span class="sc">-</span><span class="dv">10</span>)<span class="sc">:</span><span class="fu">nrow</span>(acs_bg_vars)),]),<span class="at">digits=</span><span class="dv">4</span>, <span class="at">caption =</span> <span class="st">"Statistics of Collin CO, TX"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Statistics of Collin CO, TX</caption>
+<colgroup>
+<col style="width: 3%">
+<col style="width: 9%">
+<col style="width: 33%">
+<col style="width: 8%">
+<col style="width: 9%">
+<col style="width: 5%">
+<col style="width: 9%">
+<col style="width: 7%">
+<col style="width: 5%">
+<col style="width: 7%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: left;">GEOID</th>
+<th style="text-align: left;">NAME</th>
+<th style="text-align: right;">total_pop</th>
+<th style="text-align: right;">B01001_001M</th>
+<th style="text-align: right;">SpkEng</th>
+<th style="text-align: right;">B16004_025M</th>
+<th style="text-align: right;">ALAND</th>
+<th style="text-align: right;">popden</th>
+<th style="text-align: right;">rate_eng</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">48085031643</td>
+<td style="text-align: left;">Census Tract 316.43; Collin County; Texas</td>
+<td style="text-align: right;">4423</td>
+<td style="text-align: right;">585</td>
+<td style="text-align: right;">1882</td>
+<td style="text-align: right;">337</td>
+<td style="text-align: right;">2155712</td>
+<td style="text-align: right;">0.0021</td>
+<td style="text-align: right;">0.4255</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">48085032008</td>
+<td style="text-align: left;">Census Tract 320.08; Collin County; Texas</td>
+<td style="text-align: right;">4278</td>
+<td style="text-align: right;">492</td>
+<td style="text-align: right;">1683</td>
+<td style="text-align: right;">275</td>
+<td style="text-align: right;">4209951</td>
+<td style="text-align: right;">0.0010</td>
+<td style="text-align: right;">0.3934</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">48085032012</td>
+<td style="text-align: left;">Census Tract 320.12; Collin County; Texas</td>
+<td style="text-align: right;">3492</td>
+<td style="text-align: right;">467</td>
+<td style="text-align: right;">978</td>
+<td style="text-align: right;">289</td>
+<td style="text-align: right;">1626809</td>
+<td style="text-align: right;">0.0021</td>
+<td style="text-align: right;">0.2801</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">48085031708</td>
+<td style="text-align: left;">Census Tract 317.08; Collin County; Texas</td>
+<td style="text-align: right;">3908</td>
+<td style="text-align: right;">482</td>
+<td style="text-align: right;">1787</td>
+<td style="text-align: right;">265</td>
+<td style="text-align: right;">2354378</td>
+<td style="text-align: right;">0.0017</td>
+<td style="text-align: right;">0.4573</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">48085031659</td>
+<td style="text-align: left;">Census Tract 316.59; Collin County; Texas</td>
+<td style="text-align: right;">2570</td>
+<td style="text-align: right;">426</td>
+<td style="text-align: right;">720</td>
+<td style="text-align: right;">334</td>
+<td style="text-align: right;">1001155</td>
+<td style="text-align: right;">0.0026</td>
+<td style="text-align: right;">0.2802</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">48085030509</td>
+<td style="text-align: left;">Census Tract 305.09; Collin County; Texas</td>
+<td style="text-align: right;">2895</td>
+<td style="text-align: right;">476</td>
+<td style="text-align: right;">1197</td>
+<td style="text-align: right;">314</td>
+<td style="text-align: right;">1055349</td>
+<td style="text-align: right;">0.0027</td>
+<td style="text-align: right;">0.4135</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">48085031639</td>
+<td style="text-align: left;">Census Tract 316.39; Collin County; Texas</td>
+<td style="text-align: right;">7486</td>
+<td style="text-align: right;">838</td>
+<td style="text-align: right;">2453</td>
+<td style="text-align: right;">794</td>
+<td style="text-align: right;">2827677</td>
+<td style="text-align: right;">0.0026</td>
+<td style="text-align: right;">0.3277</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">48085031717</td>
+<td style="text-align: left;">Census Tract 317.17; Collin County; Texas</td>
+<td style="text-align: right;">2148</td>
+<td style="text-align: right;">345</td>
+<td style="text-align: right;">928</td>
+<td style="text-align: right;">287</td>
+<td style="text-align: right;">470047</td>
+<td style="text-align: right;">0.0046</td>
+<td style="text-align: right;">0.4320</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">9</td>
+<td style="text-align: left;">48085030529</td>
+<td style="text-align: left;">Census Tract 305.29; Collin County; Texas</td>
+<td style="text-align: right;">3419</td>
+<td style="text-align: right;">377</td>
+<td style="text-align: right;">1697</td>
+<td style="text-align: right;">281</td>
+<td style="text-align: right;">1701192</td>
+<td style="text-align: right;">0.0020</td>
+<td style="text-align: right;">0.4963</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">48085030546</td>
+<td style="text-align: left;">Census Tract 305.46; Collin County; Texas</td>
+<td style="text-align: right;">5669</td>
+<td style="text-align: right;">763</td>
+<td style="text-align: right;">2701</td>
+<td style="text-align: right;">459</td>
+<td style="text-align: right;">3435759</td>
+<td style="text-align: right;">0.0016</td>
+<td style="text-align: right;">0.4765</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">210</td>
+<td style="text-align: left;">48085030507</td>
+<td style="text-align: left;">Census Tract 305.07; Collin County; Texas</td>
+<td style="text-align: right;">1806</td>
+<td style="text-align: right;">389</td>
+<td style="text-align: right;">808</td>
+<td style="text-align: right;">109</td>
+<td style="text-align: right;">1587250</td>
+<td style="text-align: right;">0.0011</td>
+<td style="text-align: right;">0.4474</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">211</td>
+<td style="text-align: left;">48085031416</td>
+<td style="text-align: left;">Census Tract 314.16; Collin County; Texas</td>
+<td style="text-align: right;">10446</td>
+<td style="text-align: right;">1008</td>
+<td style="text-align: right;">3712</td>
+<td style="text-align: right;">623</td>
+<td style="text-align: right;">7516784</td>
+<td style="text-align: right;">0.0014</td>
+<td style="text-align: right;">0.3554</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">212</td>
+<td style="text-align: left;">48085030702</td>
+<td style="text-align: left;">Census Tract 307.02; Collin County; Texas</td>
+<td style="text-align: right;">5445</td>
+<td style="text-align: right;">947</td>
+<td style="text-align: right;">2370</td>
+<td style="text-align: right;">440</td>
+<td style="text-align: right;">3342941</td>
+<td style="text-align: right;">0.0016</td>
+<td style="text-align: right;">0.4353</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">213</td>
+<td style="text-align: left;">48085031632</td>
+<td style="text-align: left;">Census Tract 316.32; Collin County; Texas</td>
+<td style="text-align: right;">5606</td>
+<td style="text-align: right;">810</td>
+<td style="text-align: right;">2569</td>
+<td style="text-align: right;">577</td>
+<td style="text-align: right;">3663988</td>
+<td style="text-align: right;">0.0015</td>
+<td style="text-align: right;">0.4583</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">214</td>
+<td style="text-align: left;">48085030524</td>
+<td style="text-align: left;">Census Tract 305.24; Collin County; Texas</td>
+<td style="text-align: right;">9542</td>
+<td style="text-align: right;">785</td>
+<td style="text-align: right;">3078</td>
+<td style="text-align: right;">469</td>
+<td style="text-align: right;">5384362</td>
+<td style="text-align: right;">0.0018</td>
+<td style="text-align: right;">0.3226</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">215</td>
+<td style="text-align: left;">48085031101</td>
+<td style="text-align: left;">Census Tract 311.01; Collin County; Texas</td>
+<td style="text-align: right;">5639</td>
+<td style="text-align: right;">656</td>
+<td style="text-align: right;">2349</td>
+<td style="text-align: right;">687</td>
+<td style="text-align: right;">75879749</td>
+<td style="text-align: right;">0.0001</td>
+<td style="text-align: right;">0.4166</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">216</td>
+<td style="text-align: left;">48085031903</td>
+<td style="text-align: left;">Census Tract 319.03; Collin County; Texas</td>
+<td style="text-align: right;">1507</td>
+<td style="text-align: right;">279</td>
+<td style="text-align: right;">874</td>
+<td style="text-align: right;">205</td>
+<td style="text-align: right;">1507158</td>
+<td style="text-align: right;">0.0010</td>
+<td style="text-align: right;">0.5800</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">217</td>
+<td style="text-align: left;">48085031670</td>
+<td style="text-align: left;">Census Tract 316.70; Collin County; Texas</td>
+<td style="text-align: right;">1557</td>
+<td style="text-align: right;">393</td>
+<td style="text-align: right;">985</td>
+<td style="text-align: right;">257</td>
+<td style="text-align: right;">3998070</td>
+<td style="text-align: right;">0.0004</td>
+<td style="text-align: right;">0.6326</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">218</td>
+<td style="text-align: left;">48085030536</td>
+<td style="text-align: left;">Census Tract 305.36; Collin County; Texas</td>
+<td style="text-align: right;">6714</td>
+<td style="text-align: right;">525</td>
+<td style="text-align: right;">2027</td>
+<td style="text-align: right;">320</td>
+<td style="text-align: right;">2687242</td>
+<td style="text-align: right;">0.0025</td>
+<td style="text-align: right;">0.3019</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">219</td>
+<td style="text-align: left;">48085031669</td>
+<td style="text-align: left;">Census Tract 316.69; Collin County; Texas</td>
+<td style="text-align: right;">2257</td>
+<td style="text-align: right;">200</td>
+<td style="text-align: right;">964</td>
+<td style="text-align: right;">152</td>
+<td style="text-align: right;">1560515</td>
+<td style="text-align: right;">0.0014</td>
+<td style="text-align: right;">0.4271</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">220</td>
+<td style="text-align: left;">48085030535</td>
+<td style="text-align: left;">Census Tract 305.35; Collin County; Texas</td>
+<td style="text-align: right;">2836</td>
+<td style="text-align: right;">430</td>
+<td style="text-align: right;">982</td>
+<td style="text-align: right;">230</td>
+<td style="text-align: right;">1381340</td>
+<td style="text-align: right;">0.0021</td>
+<td style="text-align: right;">0.3463</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><strong>4) Interpretation</strong></p>
+<p>Population density shows higher values within the City of Plano administrative boundary, while its surrounding census tracts have lower values. Specifically, it shows that the 25th percentile population density is 0.00092 and the 75th percentile density is 0.00214.</p>
+<p>However, the spatial patterns of the rate of population speaking only English show an opposite pattern to population density. The peripheral census tracts of Plano show a high rate of numbers speaking only English. Specifically, 25th percentile is 0.373 and 75th percentile is 0.484.</p>
 
 
 
